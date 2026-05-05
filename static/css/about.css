@@ -1,0 +1,300 @@
+/* =========================
+   General Styles
+   ========================= */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+
+}
+main{
+    margin-top: 68px;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+
+
+/* =========================
+   Hero Section
+   ========================= */
+.about-hero {
+    background: var(--gradient-hero);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* =========================
+   Mission Section
+   ========================= */
+.mission-section { padding: 80px 0; }
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.badge {
+    background: #e0e7ff;
+    color: #2B3EEE;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.mission-text h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #0F1729;
+}
+
+.mission-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.mini-stat h3 {
+    color: #2B3EEE;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* =========================
+   Values Section
+   ========================= */
+.values-section {
+    padding: 80px 0;
+    background-color: #f1f5f9;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.value-item {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+
+.value-item:hover {
+    transform: translateY(-10px);
+}
+
+/* =========================
+   How It Works
+   ========================= */
+.how-it-works {
+    background: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #0F1729;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.step-card {
+    padding: 40px;
+    border-radius: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    border-color: #2B3EEE;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: #2B3EEE;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    font-weight: 800;
+}
+
+/* =========================
+   Quote Section
+   ========================= */
+.quote-section {
+    padding: 100px 0;
+    background: linear-gradient(rgba(15, 23, 41, 0.9), rgba(15, 23, 41, 0.9)),
+                url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200');
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.quote-box p {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   Team Section
+   ========================= */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.team-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 20px;
+    width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #f1f5f9;
+}
+
+.team-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 30px rgba(43, 62, 238, 0.1);
+    border-color: #2B3EEE;
+}
+
+.team-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover img {
+    transform: rotate(5deg);
+}
+
+/* =========================
+   Footer
+   ========================= */
+.footer {
+  background: var(--foreground);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 2rem 2rem;
+}
+
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* =========================
+   Animations
+   ========================= */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+@media (max-width: 992px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .values-grid,
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__top {
+        grid-template-columns: 1fr;
+    }
+}
