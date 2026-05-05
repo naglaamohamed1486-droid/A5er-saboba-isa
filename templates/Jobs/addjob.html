@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>Post a New Job </title>
+   <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+   <link rel="stylesheet" href="{% static 'css/addjob.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark-top">
+ <header>
+    <nav class="nav">
+    <a href="index.html" class="logo">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mainGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F1729"/>
+      <stop offset="50%" stop-color="#1a2456"/>
+      <stop offset="100%" stop-color="#2B3EEE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="32" height="32" rx="8" fill="url(#mainGradient)"/>
+  <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z"
+        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z"
+        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 17h-2.4A3 3 0 0 1 9 14.7L7.6 11.3A1 1 0 0 1 8.6 10H23.4a1 1 0 0 1 .9 1.3L23 14.7A3 3 0 0 1 20.6 17H18"
+        fill="none" stroke="#F46734" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="14" y="16" width="4" height="3" rx="1"
+        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+      <p class="slog">Saboba</p>
+    </a>
+    <ul class="links" id="links"></ul>
+    <div class="right">
+    <div class="burger" id="burger" >
+    <button onclick=""><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#213a73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+    </div>
+    <div class="logs" id="logs"></div>
+    </div>
+  </nav>
+  <div class="menue" id="menue" style="display: none;">
+
+
+  </div>
+
+</header>
+    <section class="hero compact-hero">
+        <div class="hero-container">
+            <h1>Add Job</h1>
+            <p>Fill in the details to create a new job listing</p>
+        </div>
+    </section>
+
+    <main class="form-container">
+        <form>
+            <div class="card">
+                <div class="card-title">
+    <h3>Job Details</h3>
+</div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="jobtitle">Job Title</label>
+                        <input id="jobtitle" type="text" placeholder="Enter Job Title" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="salary">Salary</label>
+                        <input id="salary" type="number" placeholder="Enter Salary" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="companyname">Company Name</label>
+                        <input id="companyname" type="text" placeholder="Enter Company Name" required>
+                    </div>
+                </div>
+                
+                <div class="input-grid-three">
+                    <div class="input-group">
+                        <label for="status">Job Status</label>
+                        <select id="status" required>
+                            <option value="" disabled selected>--Select Status--</option>
+                            <option value="open">Open</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="year">Years of Experience</label>
+                        <input id="year" type="number" placeholder="Years" required>
+                    </div>
+            <div class="input-group">
+    <label for="job-type">Work Mode</label>
+    <select id="job-type" name="job-type" required>
+        <option value="" disabled selected>--Select Work Mode--</option>
+        <option value="onsite">On-site</option>
+        <option value="remote">Remote</option>
+        <option value="hybrid">Hybrid</option>
+        <option value="freelance">Freelance</option>
+    </select>
+</div>
+    <div class="input-group">
+    <label for="employment-type">Employment Type</label>
+    <select id="employment-type" required>
+    <option value="" disabled selected>--Select Employment Type--</option>
+    <option value="full-time">Full-time</option>
+    <option value="part-time">Part-time</option>
+    <option value="freelance">Freelance</option>
+    <option value="contract">Contract</option>
+</select>
+</div>
+</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <span class="card-icon blue">📄</span>
+                    <h3>Additional Info</h3>
+                </div>
+                <div class="input-group full-width">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Enter Description" rows="6" required></textarea>
+                </div>
+            </div>
+
+            <div class="card">
+    <div class="form-footer-action">
+        <button type="reset" class="btn-cancel">Reset</button>
+        <button type="submit" class="btn-post">
+            ⚡ Add Job
+        </button>
+    </div>
+</div>
+        </form>
+    </main>
+
+   <!--FOOTER-->
+ <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__brand-name">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <rect width="32" height="32" rx="8" fill="#2B3EEE"/>
+              <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            saboba
+          </div>
+          <p class="footer__brand-desc">Find your dream job or hire the best talent — all in one place.</p>
+        </div>
+
+        <div>
+          <h4 class="footer__col-title">Job Seekers</h4>
+          <ul class="footer__col-links">
+            <li><a href="search.html">Browse Jobs</a></li>
+            <li><a href="AppliedJobs.html">Applications</a></li>
+            <li><a href="profile.html">My Profile</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__col-title">Employers</h4>
+          <ul class="footer__col-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="joblist.html">Jobs List</a></li>
+            <li><a href="addjob.html">Add Job</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__col-title">Platform</h4>
+          <ul class="footer__col-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 JobFlow. All rights reserved.</span>
+        <div style="display:flex;gap:1.5rem;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+<script src="./js/add.js"></script>
+<script src="./js/navbar.js"></script>
+<script src="./js/logout.js"></script>
+</body>
+</html>
