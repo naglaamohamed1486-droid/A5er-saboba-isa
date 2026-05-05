@@ -1,0 +1,1924 @@
+[
+  {
+    "model": "jobs.job",
+    "pk": 1,
+    "fields": {
+      "title": "Frontend Developer",
+      "company": "TechNova",
+      "location": "Cairo, Egypt",
+      "time": "2 days ago",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "salary": "$800 - $1200",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Build modern and responsive user interfaces with a focus on performance and design.",
+      "required": [
+        "HTML",
+        "CSS",
+        "JS",
+        "Responsive Design"
+      ],
+      "benefit": [
+        "Health insurance",
+        "Remote option",
+        "Flexible hours"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "50-100",
+      "cover": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 2,
+    "fields": {
+      "title": "Backend Developer",
+      "company": "CodeBase",
+      "location": "Dubai, UAE",
+      "time": "1 day ago",
+      "tags": [
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ],
+      "salary": "$1000 - $1500",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Develop scalable APIs and backend systems.",
+      "required": [
+        "Node.js",
+        "APIs",
+        "Databases"
+      ],
+      "benefit": [
+        "Remote work",
+        "Bonuses",
+        "Learning budget"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Dubai",
+      "employees": "30-80",
+      "cover": "https://plus.unsplash.com/premium_photo-1661746658792-f45a2c46ad1b?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 3,
+    "fields": {
+      "title": "UI/UX Designer",
+      "company": "Creative Minds",
+      "location": "Abu Dhabi, UAE",
+      "time": "3 days ago",
+      "tags": [
+        "Figma",
+        "UX",
+        "Wireframing"
+      ],
+      "salary": "$700 - $1000",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Design intuitive user experiences and modern interfaces.",
+      "required": [
+        "Figma",
+        "UX principles",
+        "Prototyping"
+      ],
+      "benefit": [
+        "Creative freedom",
+        "Work-life balance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Abu Dhabi",
+      "employees": "20-60",
+      "cover": "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 4,
+    "fields": {
+      "title": "Graphic Designer",
+      "company": "Pixel Studio",
+      "location": "Remote",
+      "time": "5 days ago",
+      "tags": [
+        "Photoshop",
+        "Illustrator"
+      ],
+      "salary": "$500 - $900",
+      "type": "Part-time",
+      "exp": "1+ year",
+      "description": "Create visual content for branding and marketing.",
+      "required": [
+        "Adobe tools",
+        "Creativity"
+      ],
+      "benefit": [
+        "Remote",
+        "Flexible hours"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1524749292158-7540c2494485?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "10-30",
+      "cover": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 5,
+    "fields": {
+      "title": "Mobile App Developer",
+      "company": "AppWorks",
+      "location": "Cairo, Egypt",
+      "time": "2 days ago",
+      "tags": [
+        "Flutter",
+        "Dart"
+      ],
+      "salary": "$1200 - $1800",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Build cross-platform mobile apps.",
+      "required": [
+        "Flutter",
+        "API integration"
+      ],
+      "benefit": [
+        "Bonuses",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "40-100",
+      "cover": "https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 6,
+    "fields": {
+      "title": "Data Analyst",
+      "company": "Insight Analytics",
+      "location": "Alexandria, Egypt",
+      "time": "1 week ago",
+      "tags": [
+        "SQL",
+        "Excel",
+        "Power BI"
+      ],
+      "salary": "$900 - $1300",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Analyze data and generate insights.",
+      "required": [
+        "SQL",
+        "Data visualization"
+      ],
+      "benefit": [
+        "Remote",
+        "Learning budget"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1543286386-2e659306cd6c?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Alexandria",
+      "employees": "60-120",
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 7,
+    "fields": {
+      "title": "AI Engineer",
+      "company": "DeepVision",
+      "location": "Cairo, Egypt",
+      "time": "4 days ago",
+      "tags": [
+        "Python",
+        "ML"
+      ],
+      "salary": "$1500 - $2500",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Build machine learning systems.",
+      "required": [
+        "Python",
+        "TensorFlow"
+      ],
+      "benefit": [
+        "High salary",
+        "Research time"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "30-70",
+      "cover": "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 8,
+    "fields": {
+      "title": "Cybersecurity DEV",
+      "company": "SecureNet",
+      "location": "Giza, Egypt",
+      "time": "2 days ago",
+      "tags": [
+        "Security",
+        "Networking"
+      ],
+      "salary": "$1300 - $2000",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Protect systems from threats.",
+      "required": [
+        "Networking",
+        "Security tools"
+      ],
+      "benefit": [
+        "Remote",
+        "Bonuses"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1560264280-88b68371db39?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Giza",
+      "employees": "50-90",
+      "cover": "https://plus.unsplash.com/premium_photo-1674506653774-6f51d6ebe799?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 9,
+    "fields": {
+      "title": "Content Writer",
+      "company": "WordCraft",
+      "location": "Remote",
+      "time": "6 days ago",
+      "tags": [
+        "Writing",
+        "SEO"
+      ],
+      "salary": "$400 - $700",
+      "type": "Part-time",
+      "exp": "1+ year",
+      "description": "Write engaging content.",
+      "required": [
+        "Writing skills",
+        "SEO basics"
+      ],
+      "benefit": [
+        "Remote",
+        "Flexible hours"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1471107340929-a87cd0f5b5f3?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "10-40",
+      "cover": "https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 10,
+    "fields": {
+      "title": "Digital Marketing Specialist",
+      "company": "MarketPro",
+      "location": "Cairo, Egypt",
+      "time": "3 days ago",
+      "tags": [
+        "SEO",
+        "Ads"
+      ],
+      "salary": "$600 - $1000",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Manage online campaigns.",
+      "required": [
+        "Marketing",
+        "Ads platforms"
+      ],
+      "benefit": [
+        "Bonuses",
+        "Growth"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "40-80",
+      "cover": "https://images.unsplash.com/photo-1504691342899-4d92b50853e1?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 11,
+    "fields": {
+      "title": "DevOps Engineer",
+      "company": "CloudOps",
+      "location": "Remote",
+      "time": "1 day ago",
+      "tags": [
+        "Docker",
+        "AWS"
+      ],
+      "salary": "$1400 - $2200",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Manage cloud infrastructure.",
+      "required": [
+        "Docker",
+        "CI/CD"
+      ],
+      "benefit": [
+        "Remote",
+        "High salary"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "50-100",
+      "cover": "https://plus.unsplash.com/premium_photo-1678566153919-86c4ba4216f1?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 12,
+    "fields": {
+      "title": "Game Developer",
+      "company": "PlayForge",
+      "location": "Cairo, Egypt",
+      "time": "5 days ago",
+      "tags": [
+        "Unity",
+        "C#"
+      ],
+      "salary": "$900 - $1500",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Develop games.",
+      "required": [
+        "Unity",
+        "C#"
+      ],
+      "benefit": [
+        "Creative work",
+        "Bonuses"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1556438064-2d7646166914?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "30-60",
+      "cover": "https://plus.unsplash.com/premium_photo-1664908294339-ed02fdc1b806?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 13,
+    "fields": {
+      "title": "HR Specialist",
+      "company": "PeopleFirst",
+      "location": "Giza, Egypt",
+      "time": "4 days ago",
+      "tags": [
+        "HR",
+        "Communication"
+      ],
+      "salary": "$500 - $800",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Manage hiring and employees.",
+      "required": [
+        "Communication",
+        "HR basics"
+      ],
+      "benefit": [
+        "Stability",
+        "Growth"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1560264280-88b68371db39?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Giza",
+      "employees": "70-150",
+      "cover": "https://media.istockphoto.com/id/2216070904/photo/business-business-people-and-office-lifestyle-concept.webp?a=1&b=1&s=612x612&w=0&k=20&c=bYbmKTsgHAlb2P2GvsYlF9fPKm0QpySmLGfTIZaF1P4="
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 14,
+    "fields": {
+      "title": "Project Manager",
+      "company": "BuildRight",
+      "location": "Cairo, Egypt",
+      "time": "2 days ago",
+      "tags": [
+        "Agile",
+        "Scrum"
+      ],
+      "salary": "$1200 - $1800",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Manage projects and teams.",
+      "required": [
+        "Leadership",
+        "Agile"
+      ],
+      "benefit": [
+        "High salary",
+        "Leadership role"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "80-200",
+      "cover": "https://plus.unsplash.com/premium_photo-1725400817468-ddb0135d865d?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 15,
+    "fields": {
+      "title": "QA Tester",
+      "company": "QualityCheck",
+      "location": "Remote",
+      "time": "3 days ago",
+      "tags": [
+        "Testing",
+        "Automation"
+      ],
+      "salary": "$600 - $900",
+      "type": "Full-time",
+      "exp": "1+ year",
+      "description": "Ensure product quality.",
+      "required": [
+        "Testing",
+        "Attention to detail"
+      ],
+      "benefit": [
+        "Remote",
+        "Flexible"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "20-50",
+      "cover": "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 16,
+    "fields": {
+      "title": "Cook",
+      "company": "Le Gourmet",
+      "location": "Paris, France",
+      "time": "1 day ago",
+      "tags": [
+        "Cooking",
+        "Kitchen",
+        "Food"
+      ],
+      "salary": "$1200 - $1800",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Prepare high-quality meals in a fast-paced professional kitchen environment.",
+      "required": [
+        "Cooking skills",
+        "Time management",
+        "Hygiene standards"
+      ],
+      "benefit": [
+        "Meals included",
+        "Tips",
+        "Career growth"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1581349485608-9469926a8e5e?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1566554273541-37a9ca77b91f?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Paris",
+      "employees": "20-50",
+      "cover": "https://images.unsplash.com/photo-1653233797467-1a528819fd4f?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 17,
+    "fields": {
+      "title": "Photographer",
+      "company": "Berlin Shots",
+      "location": "Berlin, Germany",
+      "time": "3 days ago",
+      "tags": [
+        "Photography",
+        "Editing",
+        "Creativity"
+      ],
+      "salary": "$900 - $1400",
+      "type": "Freelance",
+      "exp": "2+ years",
+      "description": "Capture professional photos for events, brands, and creative projects.",
+      "required": [
+        "Camera skills",
+        "Editing software",
+        "Portfolio"
+      ],
+      "benefit": [
+        "Flexible schedule",
+        "Creative freedom"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1452802447250-470a88ac82bc?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Berlin",
+      "employees": "10-25",
+      "cover": "https://images.unsplash.com/photo-1603574670812-d24560880210?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 18,
+    "fields": {
+      "title": "Translator",
+      "company": "Global Lingua",
+      "location": "Dubai, UAE",
+      "time": "2 days ago",
+      "tags": [
+        "Translation",
+        "Languages",
+        "Communication"
+      ],
+      "salary": "$1000 - $1600",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Translate documents and communications between multiple languages.",
+      "required": [
+        "Fluent in 2+ languages",
+        "Attention to detail"
+      ],
+      "benefit": [
+        "Remote options",
+        "Bonuses"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Dubai",
+      "employees": "30-70",
+      "cover": "https://images.unsplash.com/photo-1620969427101-7a2bb6d83273?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 19,
+    "fields": {
+      "title": "Civil Engineer",
+      "company": "Qatar Build Co.",
+      "location": "Doha, Qatar",
+      "time": "4 days ago",
+      "tags": [
+        "Engineering",
+        "Construction",
+        "Planning"
+      ],
+      "salary": "$1500 - $2500",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Design and supervise construction projects and infrastructure.",
+      "required": [
+        "Engineering degree",
+        "Project management",
+        "Site experience"
+      ],
+      "benefit": [
+        "Housing allowance",
+        "Transport",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Doha",
+      "employees": "100-300",
+      "cover": "https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 20,
+    "fields": {
+      "title": "Tourist Guide",
+      "company": "Nile Tours",
+      "location": "Aswan, Egypt",
+      "time": "1 day ago",
+      "tags": [
+        "Tourism",
+        "Communication",
+        "History"
+      ],
+      "salary": "$500 - $900",
+      "type": "Part-time",
+      "exp": "1+ year",
+      "description": "Guide tourists through historical sites and provide engaging experiences.",
+      "required": [
+        "Good communication",
+        "History knowledge",
+        "Languages preferred"
+      ],
+      "benefit": [
+        "Tips",
+        "Flexible hours"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1539768942893-daf53e448371?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Aswan",
+      "employees": "15-40",
+      "cover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_O3VVDCTozVp_mEFJj711FwG9B1GBzVVaSg&s"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 21,
+    "fields": {
+      "title": "Online Tutor",
+      "company": "EduReach",
+      "location": "Remote",
+      "time": "1 day ago",
+      "tags": [
+        "Teaching",
+        "E-Learning",
+        "Communication"
+      ],
+      "salary": "$600 - $1100",
+      "type": "Part-time",
+      "exp": "1+ year",
+      "description": "Deliver engaging online lessons to students around the world across various subjects.",
+      "required": [
+        "Subject expertise",
+        "Strong communication",
+        "Video conferencing tools"
+      ],
+      "benefit": [
+        "Fully remote",
+        "Flexible schedule",
+        "Global exposure"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "100-500",
+      "cover": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 22,
+    "fields": {
+      "title": "Nurse",
+      "company": "LifeCare Hospital",
+      "location": "Riyadh, Saudi Arabia",
+      "time": "2 days ago",
+      "tags": [
+        "Healthcare",
+        "Patient Care",
+        "Medicine"
+      ],
+      "salary": "$1400 - $2000",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Provide compassionate patient care in a modern hospital environment.",
+      "required": [
+        "Nursing degree",
+        "Clinical experience",
+        "First aid certification"
+      ],
+      "benefit": [
+        "Housing allowance",
+        "Flight tickets",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Riyadh",
+      "employees": "200-500",
+      "cover": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 23,
+    "fields": {
+      "title": "Social Media Manager",
+      "company": "BuzzHive",
+      "location": "Cairo, Egypt",
+      "time": "3 days ago",
+      "tags": [
+        "Social Media",
+        "Content",
+        "Analytics"
+      ],
+      "salary": "$700 - $1200",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Grow and manage brand presence across all social media platforms with creative strategies.",
+      "required": [
+        "Content creation",
+        "Analytics tools",
+        "Community management"
+      ],
+      "benefit": [
+        "Hybrid work",
+        "Creative freedom",
+        "Performance bonuses"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "20-60",
+      "cover": "https://plus.unsplash.com/premium_vector-1716898124879-ee59887a00eb?w=352&dpr=2&h=367&auto=format&fit=crop&q=60&ixlib=rb-4.1.0"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 24,
+    "fields": {
+      "title": "Financial Analyst",
+      "company": "WealthPath",
+      "location": "Manama, Bahrain",
+      "time": "2 days ago",
+      "tags": [
+        "Finance",
+        "Excel",
+        "Forecasting"
+      ],
+      "salary": "$1500 - $2300",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Analyze financial data and provide actionable investment strategies to clients.",
+      "required": [
+        "Financial modeling",
+        "Excel",
+        "CFA preferred"
+      ],
+      "benefit": [
+        "Annual bonus",
+        "Health coverage",
+        "Travel allowance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Manama",
+      "employees": "50-120",
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmluYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 25,
+    "fields": {
+      "title": "Blockchain Developer",
+      "company": "ChainForge",
+      "location": "Dubai, UAE",
+      "time": "1 day ago",
+      "tags": [
+        "Blockchain",
+        "Solidity",
+        "Web3"
+      ],
+      "salary": "$2000 - $3500",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Build decentralized applications and smart contracts on cutting-edge blockchain platforms.",
+      "required": [
+        "Solidity",
+        "Ethereum",
+        "Web3.js"
+      ],
+      "benefit": [
+        "Crypto salary option",
+        "Remote-friendly",
+        "Equity stake"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Dubai",
+      "employees": "20-50",
+      "cover": "https://images.unsplash.com/photo-1601933470096-0e34634ffcde?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 26,
+    "fields": {
+      "title": "Interior Designer",
+      "company": "SpaceArt Studio",
+      "location": "Cairo, Egypt",
+      "time": "4 days ago",
+      "tags": [
+        "Interior Design",
+        "AutoCAD",
+        "3D Modeling"
+      ],
+      "salary": "$800 - $1400",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Transform spaces into stunning environments for residential and commercial clients.",
+      "required": [
+        "AutoCAD",
+        "3ds Max or Revit",
+        "Creative portfolio"
+      ],
+      "benefit": [
+        "Project bonuses",
+        "Career growth",
+        "Design allowance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "15-45",
+      "cover": "https://plus.unsplash.com/premium_photo-1682145901689-fc2c7d2bc50f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW50ZXJpb3IlMjBkZXNpZ25lcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 27,
+    "fields": {
+      "title": "IT Support",
+      "company": "TechAssist",
+      "location": "Alexandria, Egypt",
+      "time": "5 days ago",
+      "tags": [
+        "IT",
+        "Networking",
+        "Troubleshooting"
+      ],
+      "salary": "$500 - $850",
+      "type": "Full-time",
+      "exp": "1+ year",
+      "description": "Provide technical support and resolve hardware and software issues across the organization.",
+      "required": [
+        "Windows/Linux",
+        "Networking basics",
+        "Customer service"
+      ],
+      "benefit": [
+        "Stable income",
+        "Training provided",
+        "Promotion path"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1560264280-88b68371db39?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Alexandria",
+      "employees": "30-80",
+      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&auto=format&fit=crop&q=60"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 28,
+    "fields": {
+      "title": "Fashion Designer",
+      "company": "ThreadWorks",
+      "location": "Istanbul, Turkey",
+      "time": "3 days ago",
+      "tags": [
+        "Fashion",
+        "Textile",
+        "Sketching"
+      ],
+      "salary": "$900 - $1500",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Design seasonal clothing collections and work closely with production teams.",
+      "required": [
+        "Sketching",
+        "Adobe Illustrator",
+        "Textile knowledge"
+      ],
+      "benefit": [
+        "Staff discounts",
+        "Creative environment",
+        "Industry networking"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1445205170230-053b83016050?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Istanbul",
+      "employees": "40-100",
+      "cover": "https://media.istockphoto.com/id/133263086/photo/fashion-designer.webp?a=1&b=1&s=612x612&w=0&k=20&c=ThRN7yQEW7KJvuFq2gWC_8k9WxWEh9jNxn2XfIYOqis="
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 29,
+    "fields": {
+      "title": "Podcast Producer",
+      "company": "SoundWave Media",
+      "location": "Remote",
+      "time": "2 days ago",
+      "tags": [
+        "Audio",
+        "Storytelling",
+        "Production"
+      ],
+      "salary": "$700 - $1200",
+      "type": "Freelance",
+      "exp": "1+ year",
+      "description": "Plan, record, and edit podcast episodes for a growing media company with millions of listeners.",
+      "required": [
+        "Audio editing software",
+        "Storytelling",
+        "Scripting"
+      ],
+      "benefit": [
+        "Fully remote",
+        "Creative freedom",
+        "Revenue share"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1478737270197-1041fb284a16?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "10-30",
+      "cover": "https://images.unsplash.com/photo-1556761175-129418cb2dfe?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBvZGNhc3R8ZW58MHx8MHx8fDA%3D"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 30,
+    "fields": {
+      "title": "Robotics Engineer",
+      "company": "AutoBot Labs",
+      "location": "Cairo, Egypt",
+      "time": "1 day ago",
+      "tags": [
+        "Robotics",
+        "C++",
+        "ROS"
+      ],
+      "salary": "$1800 - $3000",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Design and program advanced robotic systems for industrial and research applications.",
+      "required": [
+        "ROS",
+        "C++",
+        "Mechanical design knowledge"
+      ],
+      "benefit": [
+        "Research budget",
+        "Patent sharing",
+        "Premium health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "25-60",
+      "cover": "https://plus.unsplash.com/premium_photo-1682124389443-faa964f770c9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9ib3RpY3MlMjBlbmdpbmVlcnxlbnwwfHwwfHx8MA%3D%3D"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 31,
+    "fields": {
+      "title": "Senior Frontend Developer",
+      "company": "TechCorp",
+      "location": "San Francisco, CA",
+      "time": "2 days ago",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Remote"
+      ],
+      "salary": "$120k \u2013 $160k",
+      "type": "Full-time",
+      "exp": "5+ years",
+      "description": "Build and maintain modern frontend applications using React and TypeScript with a focus on performance and user experience.",
+      "required": [
+        "React",
+        "TypeScript",
+        "REST APIs"
+      ],
+      "benefit": [
+        "Remote work",
+        "Health insurance",
+        "Stock options"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000",
+        "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=1000",
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000"
+      ],
+      "companyLocation": "USA",
+      "employees": "200-500",
+      "cover": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 32,
+    "fields": {
+      "title": "Backend Engineer",
+      "company": "DataFlow Inc",
+      "location": "New York, NY",
+      "time": "1 week ago",
+      "tags": [
+        "Node.js",
+        "Python",
+        "AWS"
+      ],
+      "salary": "$130k \u2013 $170k",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Develop scalable backend systems and APIs using Node.js and Python, with cloud deployment on AWS.",
+      "required": [
+        "Node.js",
+        "Python",
+        "AWS"
+      ],
+      "benefit": [
+        "Flexible hours",
+        "Remote options",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000",
+        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000"
+      ],
+      "companyLocation": "USA",
+      "employees": "100-300",
+      "cover": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 33,
+    "fields": {
+      "title": "UI/UX Designer",
+      "company": "DesignHub",
+      "location": "Austin, TX",
+      "time": "3 days ago",
+      "tags": [
+        "Figma",
+        "User Research",
+        "Hybrid"
+      ],
+      "salary": "$90k \u2013 $120k",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Design intuitive and engaging user interfaces while conducting user research and usability testing.",
+      "required": [
+        "Figma",
+        "User Research",
+        "Prototyping"
+      ],
+      "benefit": [
+        "Hybrid work",
+        "Creative freedom",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1000",
+        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1000",
+        "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=1000"
+      ],
+      "companyLocation": "USA",
+      "employees": "50-150",
+      "cover": "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 34,
+    "fields": {
+      "title": "Frontend Developer",
+      "company": "PixelForge",
+      "location": "Remote",
+      "time": "1 day ago",
+      "tags": [
+        "React",
+        "Frontend",
+        "Remote"
+      ],
+      "salary": "$85k \u2013 $110k",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Build responsive and performant web interfaces using React and modern CSS frameworks.",
+      "required": [
+        "React",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "benefit": [
+        "Fully remote",
+        "Flexible hours",
+        "Equipment budget"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1555066931-4365d14431b9?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "USA",
+      "employees": "10-50",
+      "cover": "https://images.unsplash.com/photo-1555066931-4365d14431b9?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 35,
+    "fields": {
+      "title": "Backend Engineer",
+      "company": "CoreSystems",
+      "location": "Berlin, Germany",
+      "time": "2 days ago",
+      "tags": [
+        "Python",
+        "Backend",
+        "On-site"
+      ],
+      "salary": "$95k \u2013 $130k",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Design and maintain scalable backend services and RESTful APIs using Python and Django.",
+      "required": [
+        "Python",
+        "Django",
+        "PostgreSQL"
+      ],
+      "benefit": [
+        "Relocation support",
+        "30 days PTO",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Germany",
+      "employees": "150-500",
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 36,
+    "fields": {
+      "title": "Data Scientist",
+      "company": "Insightful AI",
+      "location": "New York, NY",
+      "time": "5 days ago",
+      "tags": [
+        "Python",
+        "Data Science",
+        "Hybrid"
+      ],
+      "salary": "$110k \u2013 $150k",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Analyze large datasets and build predictive models to drive data-informed business decisions.",
+      "required": [
+        "Python",
+        "Pandas",
+        "Scikit-learn"
+      ],
+      "benefit": [
+        "Hybrid work",
+        "Annual bonus",
+        "401k matching"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "USA",
+      "employees": "50-150",
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 37,
+    "fields": {
+      "title": "Product Manager",
+      "company": "LaunchPad Co.",
+      "location": "San Francisco, CA",
+      "time": "1 week ago",
+      "tags": [
+        "Lead",
+        "Management",
+        "Hybrid"
+      ],
+      "salary": "$120k \u2013 $160k",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Lead cross-functional teams to define, build, and ship products that solve real user problems.",
+      "required": [
+        "Product Strategy",
+        "Agile",
+        "Roadmapping"
+      ],
+      "benefit": [
+        "Hybrid work",
+        "Stock options",
+        "Health & dental"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "USA",
+      "employees": "50-150",
+      "cover": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 38,
+    "fields": {
+      "title": "DevOps Engineer",
+      "company": "CloudNine",
+      "location": "Remote",
+      "time": "3 days ago",
+      "tags": [
+        "DevOps",
+        "Remote",
+        "Senior"
+      ],
+      "salary": "$105k \u2013 $140k",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Manage CI/CD pipelines, cloud infrastructure, and ensure system reliability and uptime.",
+      "required": [
+        "AWS",
+        "Docker",
+        "Kubernetes"
+      ],
+      "benefit": [
+        "Fully remote",
+        "Home office stipend",
+        "Unlimited PTO"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "USA",
+      "employees": "10-50",
+      "cover": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 39,
+    "fields": {
+      "title": "Mobile Developer",
+      "company": "AppCraft",
+      "location": "Dubai, UAE",
+      "time": "2 days ago",
+      "tags": [
+        "Flutter",
+        "Mobile",
+        "On-site"
+      ],
+      "salary": "$80k \u2013 $110k",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Develop cross-platform mobile applications using Flutter for iOS and Android.",
+      "required": [
+        "Flutter",
+        "Dart",
+        "Firebase"
+      ],
+      "benefit": [
+        "Visa sponsorship",
+        "Housing allowance",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "UAE",
+      "employees": "10-50",
+      "cover": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 40,
+    "fields": {
+      "title": "Cybersecurity Analyst",
+      "company": "SecureNet",
+      "location": "London, UK",
+      "time": "4 days ago",
+      "tags": [
+        "Cybersecurity",
+        "Senior",
+        "Hybrid"
+      ],
+      "salary": "$100k \u2013 $135k",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Monitor, detect, and respond to security threats and vulnerabilities across company infrastructure.",
+      "required": [
+        "SIEM",
+        "Penetration Testing",
+        "Network Security"
+      ],
+      "benefit": [
+        "Hybrid work",
+        "Certifications budget",
+        "Pension plan"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1560264280-88b68371db39?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "UK",
+      "employees": "150-500",
+      "cover": "https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 41,
+    "fields": {
+      "title": "Machine Learning Engineer",
+      "company": "NeuralWave",
+      "location": "Toronto, Canada",
+      "time": "6 days ago",
+      "tags": [
+        "Machine Learning",
+        "Python",
+        "Hybrid"
+      ],
+      "salary": "$115k \u2013 $155k",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Research, build, and deploy machine learning models to production at scale.",
+      "required": [
+        "PyTorch",
+        "Python",
+        "MLOps"
+      ],
+      "benefit": [
+        "Hybrid work",
+        "Research budget",
+        "Stock options"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Canada",
+      "employees": "50-150",
+      "cover": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 42,
+    "fields": {
+      "title": "Junior Frontend Developer",
+      "company": "StartUp Studio",
+      "location": "Remote",
+      "time": "Today",
+      "tags": [
+        "JavaScript",
+        "Junior",
+        "Remote"
+      ],
+      "salary": "$50k \u2013 $70k",
+      "type": "Full-time",
+      "exp": "0-1 years",
+      "description": "Join a fast-moving startup and build modern web interfaces while growing your frontend skills.",
+      "required": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "benefit": [
+        "Fully remote",
+        "Mentorship program",
+        "Flexible hours"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "USA",
+      "employees": "10-50",
+      "cover": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 43,
+    "fields": {
+      "title": "Graphic Designer",
+      "company": "BrandWorks",
+      "location": "Cairo, Egypt",
+      "time": "2 days ago",
+      "tags": [
+        "Design",
+        "UI/UX",
+        "On-site"
+      ],
+      "salary": "$40k \u2013 $60k",
+      "type": "Full-time",
+      "exp": "1+ years",
+      "description": "Create compelling visual content for digital and print including branding, social media, and marketing materials.",
+      "required": [
+        "Adobe Illustrator",
+        "Photoshop",
+        "Brand Identity"
+      ],
+      "benefit": [
+        "On-site gym",
+        "Creative environment",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1524749292158-7540c2494485?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Egypt",
+      "employees": "10-50",
+      "cover": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 44,
+    "fields": {
+      "title": "Legal Advisor",
+      "company": "LexGroup",
+      "location": "Dubai, UAE",
+      "time": "2 days ago",
+      "tags": [
+        "Law",
+        "Communication",
+        "On-site"
+      ],
+      "salary": "$2000 - $3500",
+      "type": "Full-time",
+      "exp": "5+ years",
+      "description": "Provide legal counsel on corporate matters, contracts, and compliance for multinational clients.",
+      "required": [
+        "Law degree",
+        "Contract review",
+        "Corporate law"
+      ],
+      "benefit": [
+        "Travel allowance",
+        "Health insurance",
+        "Annual bonus"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1521791055366-0d553872952f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "UAE",
+      "employees": "50-150",
+      "cover": "https://images.unsplash.com/photo-1521791055366-0d553872952f?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 45,
+    "fields": {
+      "title": "Personal Trainer",
+      "company": "FitLife Gym",
+      "location": "Cairo, Egypt",
+      "time": "1 day ago",
+      "tags": [
+        "Fitness",
+        "Coaching",
+        "On-site"
+      ],
+      "salary": "$600 - $1000",
+      "type": "Part-time",
+      "exp": "1+ year",
+      "description": "Design and deliver personalized fitness programs to help clients achieve their health goals.",
+      "required": [
+        "Fitness certification",
+        "Nutrition basics",
+        "Motivational skills"
+      ],
+      "benefit": [
+        "Free gym membership",
+        "Flexible hours",
+        "Commission on clients"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1531498860502-7c67cf519b9e?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "10-40",
+      "cover": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 46,
+    "fields": {
+      "title": "Music Producer",
+      "company": "BeatLab Studios",
+      "location": "Remote",
+      "time": "3 days ago",
+      "tags": [
+        "Audio",
+        "Creativity",
+        "Remote"
+      ],
+      "salary": "$1000 - $2000",
+      "type": "Freelance",
+      "exp": "3+ years",
+      "description": "Compose, mix, and master music tracks for artists, ads, and media projects worldwide.",
+      "required": [
+        "DAW proficiency",
+        "Music theory",
+        "Mixing & mastering"
+      ],
+      "benefit": [
+        "Royalty sharing",
+        "Fully remote",
+        "Creative freedom"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1478737270197-1041fb284a16?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Remote",
+      "employees": "5-20",
+      "cover": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 47,
+    "fields": {
+      "title": "Accountant",
+      "company": "FinEdge",
+      "location": "Riyadh, Saudi Arabia",
+      "time": "4 days ago",
+      "tags": [
+        "Finance",
+        "Excel",
+        "On-site"
+      ],
+      "salary": "$1200 - $1800",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Manage financial records, prepare reports, and ensure compliance with local tax regulations.",
+      "required": [
+        "Accounting degree",
+        "Excel",
+        "VAT knowledge"
+      ],
+      "benefit": [
+        "Housing allowance",
+        "Annual flight tickets",
+        "Health insurance"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Saudi Arabia",
+      "employees": "100-300",
+      "cover": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 48,
+    "fields": {
+      "title": "Sales Representative",
+      "company": "SalesForce MENA",
+      "location": "Cairo, Egypt",
+      "time": "1 day ago",
+      "tags": [
+        "Sales",
+        "Communication",
+        "On-site"
+      ],
+      "salary": "$700 - $1200",
+      "type": "Full-time",
+      "exp": "1+ year",
+      "description": "Drive revenue growth by building client relationships and closing deals across the MENA region.",
+      "required": [
+        "Negotiation skills",
+        "CRM tools",
+        "Arabic & English"
+      ],
+      "benefit": [
+        "Commission",
+        "Performance bonuses",
+        "Career growth"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "50-150",
+      "cover": "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 49,
+    "fields": {
+      "title": "Lab Technician",
+      "company": "BioCore Labs",
+      "location": "Alexandria, Egypt",
+      "time": "5 days ago",
+      "tags": [
+        "Science",
+        "Healthcare",
+        "On-site"
+      ],
+      "salary": "$800 - $1300",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Conduct laboratory tests and experiments in support of medical research and diagnostics.",
+      "required": [
+        "Biology or Chemistry degree",
+        "Lab equipment",
+        "Attention to detail"
+      ],
+      "benefit": [
+        "Research exposure",
+        "Health insurance",
+        "Stable hours"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Alexandria",
+      "employees": "30-80",
+      "cover": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 50,
+    "fields": {
+      "title": "Food & Beverage Manager",
+      "company": "Grand Nile Hotel",
+      "location": "Cairo, Egypt",
+      "time": "2 days ago",
+      "tags": [
+        "Hospitality",
+        "Management",
+        "On-site"
+      ],
+      "salary": "$1500 - $2200",
+      "type": "Full-time",
+      "exp": "4+ years",
+      "description": "Oversee all food and beverage operations across hotel restaurants, bars, and banquets.",
+      "required": [
+        "Hospitality degree",
+        "Team management",
+        "Menu planning"
+      ],
+      "benefit": [
+        "Meals included",
+        "Hotel discounts",
+        "Annual bonus"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "100-400",
+      "cover": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 51,
+    "fields": {
+      "title": "School Teacher",
+      "company": "Bright Minds Academy",
+      "location": "Amman, Jordan",
+      "time": "3 days ago",
+      "tags": [
+        "Teaching",
+        "Education",
+        "On-site"
+      ],
+      "salary": "$800 - $1300",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Deliver engaging classroom lessons for middle school students in Math and Science subjects.",
+      "required": [
+        "Education degree",
+        "Classroom management",
+        "Curriculum planning"
+      ],
+      "benefit": [
+        "Summer breaks",
+        "Health insurance",
+        "Professional development"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Jordan",
+      "employees": "50-200",
+      "cover": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 52,
+    "fields": {
+      "title": "Logistics Coordinator",
+      "company": "SwiftShip",
+      "location": "Port Said, Egypt",
+      "time": "1 day ago",
+      "tags": [
+        "Logistics",
+        "Planning",
+        "On-site"
+      ],
+      "salary": "$900 - $1400",
+      "type": "Full-time",
+      "exp": "2+ years",
+      "description": "Coordinate shipments, manage supplier relationships, and ensure on-time delivery across the supply chain.",
+      "required": [
+        "Supply chain knowledge",
+        "ERP systems",
+        "Communication skills"
+      ],
+      "benefit": [
+        "Transport allowance",
+        "Stability",
+        "Annual bonus"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1553413077-190dd305871c?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Egypt",
+      "employees": "80-250",
+      "cover": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=400&h=160&fit=crop"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 53,
+    "fields": {
+      "title": "Electronics Engineer",
+      "company": "CircuitX",
+      "location": "Cairo, Egypt",
+      "time": "6 days ago",
+      "tags": [
+        "Engineering",
+        "Hardware",
+        "On-site"
+      ],
+      "salary": "$1200 - $2000",
+      "type": "Full-time",
+      "exp": "3+ years",
+      "description": "Design and test electronic circuits and embedded systems for consumer and industrial products.",
+      "required": [
+        "PCB design",
+        "Embedded C",
+        "Oscilloscope & multimeter"
+      ],
+      "benefit": [
+        "Lab equipment provided",
+        "Health insurance",
+        "Project bonuses"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&auto=format&fit=crop&q=60",
+        "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=1000&auto=format&fit=crop&q=60"
+      ],
+      "companyLocation": "Cairo",
+      "employees": "40-120",
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=160&fit=crop"
+    }
+  }
+]
