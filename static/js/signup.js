@@ -1,8 +1,13 @@
+function getCSRF() {
+    return document.cookie.split('; ')
+        .find(r => r.startsWith('csrftoken='))
+        ?.split('=')[1] || '';
+}
 
+// إظهار/إخفاء حقل الشركة حسب الـ role
 let roleRadios = document.querySelectorAll('input[name="role"]');
 let companyDiv = document.querySelector('.company');
 let companyInput = document.getElementById('company');
-
 
 companyDiv.style.display = "none";
 
@@ -14,93 +19,43 @@ roleRadios.forEach(radio => {
         } else {
             companyDiv.style.display = "none";
             companyInput.removeAttribute("required");
-            companyInput.value = ""; 
+            companyInput.value = "";
         }
     });
 });
 
+document.getElementById("signupForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
 
-
-document.getElementById("signupForm").addEventListener("submit", function(e) {
-    e.preventDefault(); 
-
-    let username = document.getElementById("username").value;
-
-    let email = document.getElementById("email").value;   
-    let password = document.getElementById("password").value;
-    let confirmPassword = document.getElementById("confirm_password").value;
-    let role = document.querySelector('input[name="role"]:checked')?.value;
-
+    const role = document.querySelector('input[name="role"]:checked')?.value;
     if (!role) {
         alert("Please select a role");
         return;
     }
 
-    if (password !== confirmPassword) {
-        alert("Incorrect password");
+    const body = {
+        username        : document.getElementById("username").value,
+        email           : document.getElementById("email").value,
+        password        : document.getElementById("password").value,
+        confirm_password: document.getElementById("confirm_password").value,
+        role            : role,
+        age             : document.getElementById("age").value,
+       gender          : document.getElementById("gender")?.value || "",
+        company         : document.getElementById("company")?.value || ""
+    };
+
+    const res  = await fetch("/accounts/signup/", {
+        method : "POST",
+        headers: { "Content-Type": "application/json", "X-CSRFToken": getCSRF() },
+        body   : JSON.stringify(body)
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+        alert(data.error);
         return;
     }
-    localStorage.setItem("username", username);
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-    localStorage.setItem("role", role);
-    localStorage.setItem("used-role",role)
 
-    let totalUsers = parseInt(localStorage.getItem("totalUsers") || "0");
-    totalUsers++;
-    localStorage.setItem("totalUsers", totalUsers);
-
-    
-
-    if (role === "admin") {
-        window.location.href = "dashboard.html";
-    } 
-    else if (role === "user") {
-        window.location.href = "search.html";
-    }
+    if (data.role === "admin") window.location.href = "/jobs/dashboard/";
+    else                       window.location.href = "/jobs/search/";
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.getElementById("signupForm").addEventListener("submit", function(e) {
-//     e.preventDefault(); 
-
-//     let email = document.getElementById("email").value;   
-//     let password = document.getElementById("password").value;
-//     let confirmPassword = document.getElementById("confirm_password").value;
-//      let role = document.querySelector('input[name="role"]:checked').value;
-
-    
-
-
-//     if (password !== confirmPassword) {
-//         alert("Incorrect password");
-//         return;
-//     }
-
-    
-//     localStorage.setItem("email", email);
-//     localStorage.setItem("password", password);
-//     localStorage.setItem("role", role);
-
-    
-//     if (role === "admin") {
-//         window.location.href = "dashboard.html";
-//     } 
-//     else if (role === "user") {
-//         window.location.href = "search.html";
-//     } 
-//     else {
-//         alert("Please select a role");
-//     }
-// });

@@ -1,34 +1,27 @@
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+function getCSRF() {
+    return document.cookie.split('; ')
+        .find(r => r.startsWith('csrftoken='))
+        ?.split('=')[1] || '';
+}
+
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-    let savedEmail = localStorage.getItem("email");
-    let savedPassword = localStorage.getItem("password");
-    let savedRole = localStorage.getItem("role");
+    const email    = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
-    
-    if (!savedEmail || email !== savedEmail) {
-        alert("Email not found, please sign up first");
+    const res  = await fetch("/accounts/login/", {
+        method : "POST",
+        headers: { "Content-Type": "application/json", "X-CSRFToken": getCSRF() },
+        body   : JSON.stringify({ email, password })
+    });
+    const data = await res.json();
+
+    if (!res.ok) {
+        alert(data.error);
         return;
     }
 
-    
-    if (password !== savedPassword) {
-        alert("Incorrect password");
-        return;
-    }
-
-     localStorage.setItem("used-role", savedRole); 
-    
-    if (savedRole === "user") {
-        window.location.href = "search.html";
-    } 
-    else if (savedRole === "admin") {
-        window.location.href = "dashboard.html";
-    } 
-    else {
-        alert("No role found, please sign up first");
-    }
+    if (data.role === "admin") window.location.href = "/jobs/dashboard/";
+    else                       window.location.href = "/jobs/search/";
 });

@@ -1,4 +1,13 @@
-function logout() {
-    localStorage.removeItem("used-role");
-    window.location.href = "index.html"; 
+function getCSRF() {
+    return document.cookie.split('; ')
+        .find(r => r.startsWith('csrftoken='))
+        ?.split('=')[1] || '';
+}
+
+async function logout() {
+    await fetch("/accounts/logout/", {
+        method : "POST",
+        headers: { "X-CSRFToken": getCSRF() }
+    });
+    window.location.href = "/";
 }
