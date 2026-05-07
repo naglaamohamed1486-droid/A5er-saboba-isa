@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Job
 from .forms import JobForm
 
@@ -7,13 +8,25 @@ def job_list(request):
     return render(request, 'jobs/job_list.html', {'jobs': jobs})
 
 
-def search_jobs(request):
-    query = request.GET.get('q')
+def search(request):
+    jobs = Job.objects.all()
 
-    if query:
-        jobs = Job.objects.filter(title__icontains=query)
-    else:
-        jobs = Job.objects.all()
+    q = request.GET.get('q')
+    location = request.GET.get('location')
+    job_type = request.GET.get('type')
+    tags = request.GET.get('tags')
+
+    if q:
+        jobs = jobs.filter(title__icontains=q)
+
+    if location and location != "All Locations":
+        jobs = jobs.filter(location__icontains=location)
+
+    if job_type and job_type != "All Types":
+        jobs = jobs.filter(type__icontains=job_type)
+
+    if tags and tags != "All-Tags":
+        jobs = jobs.filter(tags__icontains=tags)
 
     return render(request, 'jobs/search.html', {'jobs': jobs})
 
@@ -29,3 +42,7 @@ def add_jobs(request):
 
 
 #habiba
+
+def jobDetails(request, id):
+    job = get_object_or_404(Job, id=id)
+    return render(request, 'jobs/jobDetails.html', {'job': job})
