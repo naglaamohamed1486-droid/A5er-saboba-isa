@@ -2,8 +2,20 @@ from django.shortcuts import render,redirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 import ast
+from functools import wraps
 from .models import Job
 from .forms import JobForm
+
+
+def admin_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+        if request.user.role != 'admin':
+            return redirect('search')
+        return view_func(request, *args, **kwargs)
+    return wrapper
 
 def search(request):
     query = request.GET.get('q')
@@ -15,6 +27,7 @@ def search(request):
 
     return render(request, 'jobs/search.html', {'jobs': jobs})
 
+@admin_required
 def add_jobs(request):    
     if request.method == "POST":
         form = JobForm(request.POST)
@@ -33,7 +46,7 @@ def add_jobs(request):
     return render(request, 'jobs/addjob.html', {'form': form})
 
 #naglaa
-
+@admin_required
 def dashboard(request):
     jobs = Job.objects.filter(employer=request.user)
 
@@ -44,7 +57,7 @@ def dashboard(request):
         'total_jobs': jobs.count(),
         'total_applications': total_applications,
     })
-
+@admin_required
 def job_list(request):
     jobs = Job.objects.filter(employer=request.user)
 
@@ -53,12 +66,12 @@ def job_list(request):
         'total_jobs': jobs.count()
     })
 
-
+@admin_required
 def delete_job(request, id):
     job = get_object_or_404(Job, id=id, employer=request.user)
     job.delete()
     return redirect('job_list')
-
+@admin_required
 def edit_job(request, id):
     job = get_object_or_404(Job, id=id, employer=request.user)
 
