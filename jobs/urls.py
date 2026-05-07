@@ -7,10 +7,7 @@ urlpatterns = [
     path('add/', views.add_jobs, name='add_jobs')
 
    #naglaa
-   #anaaaaaa henaaaaa 
-   #where the hell is my husbund
-   #ya hlaaak ya 3zaaab 
-
+   
 
 
 

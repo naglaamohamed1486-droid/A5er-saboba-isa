@@ -23,3 +23,9 @@ def add_jobs(request):
         form.save()
         return redirect('dashboard')
     return render(request, 'jobs/addjob.html', {'form': form})
+
+#naglaa
+
+
+
+#habiba
