@@ -19,7 +19,10 @@
     <div class="filter">
 
         <div class="searchdiv">
-            <input id="search" type="text" placeholder="Search job title...">
+            <form method="GET">
+    <input name="q" id="search" type="text" placeholder="Search job title...">
+    <button type="submit">Search</button>
+
 
             <select id="location">
                 <option>all locations</option>
@@ -44,7 +47,7 @@
             <button id="f">Filters</button>
             <button id="reset">Reset</button>
         </div>
-
+</form>
     </div>
 </div>
 
@@ -72,8 +75,10 @@
                 </ul>
 
                 <ul class="tag">
-                    {{ job.tags }}
-                </ul>
+    {% for tag in job.tags %}
+        <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
 
                 <hr>
 
@@ -81,7 +86,7 @@
                     <span class="timestamp">Now</span>
 
                     <button class="view">
-                        <a href="#">View</a>
+                        <a href="{% url 'jobDetails' job.id %}">View details</a>
                     </button>
                 </div>
 
@@ -93,7 +98,7 @@
 
 </main>
 
-<script src="{% static 'js/filter.js' %}"></script>
+<script src="{% static 'js/search.js' %}"></script>
 
 </body>
 </html>
