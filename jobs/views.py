@@ -10,28 +10,16 @@ def job_list(request):
 
 
 def search(request):
-    jobs = Job.objects.all()
+    query = request.GET.get('q')
 
-    q = request.GET.get('q')
-    location = request.GET.get('location')
-    job_type = request.GET.get('type')
-    tags = request.GET.get('tags')
+    jobs = Job.objects.all()  # دا الأساس
 
-    if q:
-        jobs = jobs.filter(title__icontains=q)
-
-    if location and location != "All Locations":
-        jobs = jobs.filter(location__icontains=location)
-
-    if job_type and job_type != "All Types":
-        jobs = jobs.filter(type__icontains=job_type)
-
-    if tags and tags != "All-Tags":
-        jobs = jobs.filter(tags__icontains=tags)
+    if query:
+        jobs = jobs.filter(title__icontains=query)
 
     return render(request, 'jobs/search.html', {'jobs': jobs})
 
-def add_jobs(request):
+def add_jobs(request):    
     if request.method == "POST":
         form = JobForm(request.POST)
         if form.is_valid():
