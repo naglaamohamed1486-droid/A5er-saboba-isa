@@ -10,7 +10,7 @@ urlpatterns = [
    #naglaa
    path('dashboard/', views.dashboard, name='dashboard'),
    path('delete-job/<int:id>/', views.delete_job, name='delete_job'),
-
+   path('edit/<int:id>/', views.edit_job, name='edit_job'),
    #habiba
    #yarab n3eesh
    #yarab n3eesh tany
