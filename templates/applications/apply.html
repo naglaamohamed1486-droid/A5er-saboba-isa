@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Apply for: {{ job.title }}</h2>
+<p>{{ job.company }} — {{ job.location }}</p>
+<form method="POST">
+    {% csrf_token %}
+    <textarea name="cover_letter" placeholder="Write a cover letter (optional)..." rows="5" class="form-control"></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit Application</button>
+    <a href="{% url 'jobDetails' job.id %}" class="btn btn-secondary">Back</a>
+</form>
+{% endblock %}

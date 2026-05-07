@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Applications</h2>
+{% if applications %}
+    {% for app in applications %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>{{ app.job.title }}</h5>
+            <p>{{ app.job.company }} — {{ app.job.location }}</p>
+            <p>{{ app.job.type }} | {{ app.job.time }} | {{ app.job.salary }}</p>
+            <small>Applied on: {{ app.applied_at|date:"d/m/Y" }}</small>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>You have not applied for any jobs yet.</p>
+    <a href="{% url 'job_list' %}">Browse Jobs</a>
+{% endif %}
+{% endblock %}

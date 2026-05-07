@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Saved Jobs</h2>
+{% if saved_jobs %}
+    {% for item in saved_jobs %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>{{ item.job.title }}</h5>
+            <p>{{ item.job.company }} — {{ item.job.location }}</p>
+            <p>{{ item.job.type }} | {{ item.job.salary }}</p>
+            <a href="{% url 'jobDetail' item.job.id %}" class="btn btn-sm btn-primary">View</a>
+            <a href="{% url 'toggle_save_job' item.job.id %}" class="btn btn-sm btn-danger">Remove</a>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>No saved jobs found.</p>
+{% endif %}
+{% endblock %}
