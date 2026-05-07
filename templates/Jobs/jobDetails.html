@@ -31,12 +31,12 @@
 <main>
 <div class="card shadow">
 
-    <button>
+    <button class="back">
         <a href="{% url 'search' %}">⬅ Back to Jobs</a>
     </button>
 
     <!-- صورة -->
-    <img src="{{ job.image.url }}" width="100%" height="300px">
+    <img src="{{ job.cover }}" width="100%" height="300px">
 
     <!-- العنوان -->
     <div class="head">
@@ -53,32 +53,22 @@
 
     <!-- Tags -->
     <ul class="tags">
-        {% for tag in job.tags.all %}
-            <li>{{ tag.name }}</li>
-        {% endfor %}
-    </ul>
+    {% for tag in job.tags %}
+        <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
 
     <!-- معلومات -->
     <ul class="info">
         <li>
-            <h5>Salary</h5>
-            <span>{{ job.salary }}</span>
-        </li>
+    <h5>Type</h5>
+    <span>{{ job.type }}</span>
+</li>
 
-        <li>
-            <h5>Location</h5>
-            <span>{{ job.location }}</span>
-        </li>
-
-        <li>
-            <h5>Type</h5>
-            <span>{{ job.job_type }}</span>
-        </li>
-
-        <li>
-            <h5>Experience</h5>
-            <span>{{ job.experience }}</span>
-        </li>
+<li>
+    <h5>Experience</h5>
+    <span>{{ job.exp }}</span>
+</li>
     </ul>
 
 </div>
@@ -100,10 +90,10 @@
             <div class="shadow">
                 <h2>Requirements</h2>
                 <ul>
-                    {% for req in job.requirements.all %}
-                        <li>{{ req.text }}</li>
-                    {% endfor %}
-                </ul>
+    {% for req in job.required %}
+        <li>{{ req }}</li>
+    {% endfor %}
+</ul>
             </div>
         </div>
 
@@ -111,11 +101,11 @@
         <div class="bord">
             <div class="shadow">
                 <h2>Benefits & Perks</h2>
-                <ul>
-                    {% for b in job.benefits.all %}
-                        <li>{{ b.text }}</li>
-                    {% endfor %}
-                </ul>
+               <ul>
+    {% for b in job.benefit %}
+        <li>{{ b }}</li>
+    {% endfor %}
+</ul>
             </div>
         </div>
 
@@ -128,8 +118,8 @@
             <h2>About company</h2>
 
             <ul>
-                <li>{{ job.company_location }}</li>
-                <li>{{ job.employees_count }} employees</li>
+                <li>{{ job.companyLocation }}</li>
+<li>{{ job.employees }} employees</li>
             </ul>
         </div>
 
