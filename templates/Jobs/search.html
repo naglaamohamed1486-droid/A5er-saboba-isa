@@ -1,118 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% load static %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Jobs</title>
-
-  <link rel="stylesheet" href="{% static 'css/search.css' %}">
-  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Search Jobs</title>
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
 </head>
-
 <body>
 
-<header>
-  <nav class="nav">
-    <a href="{% url 'home' %}" class="logo">
-      <p class="slog">Saboba</p>
-    </a>
+<!-- HERO -->
+<section class="hero">
+    <h1>Find Your Job</h1>
+    <h4>Search & filter easily</h4>
+</section>
 
-    <ul class="links" id="links"></ul>
-    <div class="right">
-      <div class="logs" id="logs"></div>
+<!-- SEARCH BOX -->
+<div class="float">
+    <div class="filter">
+
+        <div class="searchdiv">
+            <input id="search" type="text" placeholder="Search job title...">
+
+            <select id="location">
+                <option>all locations</option>
+                <option>Cairo</option>
+                <option>Remote</option>
+            </select>
+
+            <select id="Types">
+                <option>all types</option>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Freelance</option>
+            </select>
+
+            <select id="Tags">
+                <option>all-tags</option>
+                <option>React</option>
+                <option>Django</option>
+                <option>UI</option>
+            </select>
+
+            <button id="f">Filters</button>
+            <button id="reset">Reset</button>
+        </div>
+
     </div>
-  </nav>
-</header>
+</div>
 
+<!-- JOBS -->
 <main>
 
-  <div class="float">
-    <div class="hero">
-      <h1>Find Jobs</h1>
-      <h4>Discover your next career opportunity</h4>
-    </div>
+    <h3>Available Jobs</h3>
 
-    <input type="text" name="q" id="search" placeholder="Search Jobs...">
+    <section class="job">
+        <div class="job-list">
 
-<select name="location">
-<select name="type">
-<select name="tags">
+            {% for job in jobs %}
+            <div class="job-card">
 
-    <!-- 🔥 FORM -->
-    <form class="filter" method="GET" action="{% url 'search' %}">
-      <div class="searchdiv">
-        <input type="text" name="q" id="search"
-               placeholder="Search Jobs..."
-               value="{{ request.GET.q }}">
+                <img class="cover" src="{{ job.cover }}" alt="">
 
-        <button id="f" type="submit">Search</button>
+                <h2 class="job-name">{{ job.title }}</h2>
 
-        <a id="reset" href="{% url 'search' %}">X Cancel</a>
-      </div>
-    </form>
-  </div>
+                <p class="company">{{ job.company }}</p>
 
-  <h3>Jobs Found</h3>
+                <ul class="details">
+                    <li class="type">{{ job.type }}</li>
+                    <li class="location">{{ job.location }}</li>
+                    <li class="money">{{ job.salary }}</li>
+                </ul>
 
-  <!-- 🔥 JOBS -->
-  <div class="job">
-    <div class="job-list">
+                <ul class="tag">
+                    {{ job.tags }}
+                </ul>
 
-      {% for job in jobs %}
-      <div class="job-card">
+                <hr>
 
-        <img class="cover" src="{{ job.cover }}" alt="job image">
+                <div class="foot">
+                    <span class="timestamp">Now</span>
 
-        <div class="head">
-          <h2 class="job-name">{{ job.title }}</h2>
+                    <button class="view">
+                        <a href="#">View</a>
+                    </button>
+                </div>
+
+            </div>
+            {% endfor %}
+
         </div>
-
-        <p class="company">{{ job.company }}</p>
-
-        <ul class="details">
-          <li class="typetag">{{ job.type }}</li>
-          <li class="loctag">{{ job.location }}</li>
-          <li class="money">{{ job.salary }}</li>
-        </ul>
-
-        <!-- لو tags string -->
-        <ul class="tag">
-          {% for tag in job.tags.split %}
-            <li>{{ tag }}</li>
-          {% endfor %}
-        </ul>
-
-        <hr>
-
-        <div class="foot">
-          <div class="timestamp">{{ job.time }}</div>
-
-          <button class="view">
-            <a href="{% url 'jobDetails' job.id %}">View Details</a>
-          </button>
-        </div>
-
-      </div>
-      {% empty %}
-        <p style="text-align:center;">No jobs found</p>
-      {% endfor %}
-
-    </div>
-  </div>
+    </section>
 
 </main>
 
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__bottom">
-      <span>© 2026 Saboba. All rights reserved.</span>
-    </div>
-  </div>
-</footer>
-
-<script src="{% static 'js/navbar.js' %}"></script>
-<script src="{% static 'js/logout.js' %}"></script>
+<script src="{% static 'js/filter.js' %}"></script>
 
 </body>
 </html>
