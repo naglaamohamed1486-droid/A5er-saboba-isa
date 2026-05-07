@@ -1,187 +1,158 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>job details </title>
+    <title>{{ job.title }}</title>
+
     <link rel="stylesheet" href="{% static 'css/jobdetails.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-   </head>
+</head>
+
 <body>
-    <header>
-    <nav class="nav">
-    <a href="index.html" class="logo">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="mainGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F1729"/>
-      <stop offset="50%" stop-color="#1a2456"/>
-      <stop offset="100%" stop-color="#2B3EEE"/>
-    </linearGradient>
-  </defs>
 
-  <rect width="32" height="32" rx="8" fill="url(#mainGradient)"/>
-  <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 17h-2.4A3 3 0 0 1 9 14.7L7.6 11.3A1 1 0 0 1 8.6 10H23.4a1 1 0 0 1 .9 1.3L23 14.7A3 3 0 0 1 20.6 17H18"
-        fill="none" stroke="#F46734" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="14" y="16" width="4" height="3" rx="1"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-      <p class="slog">Saboba</p>
+<header>
+<nav class="nav">
+    <a href="{% url 'home' %}" class="logo">
+        <p class="slog">Saboba</p>
     </a>
-    <ul class="links" id="links"></ul>
+
+    <ul class="links"></ul>
+
     <div class="right">
-    <div class="burger" id="burger" >
-    <button onclick=""><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#213a73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <div class="logs"></div>
     </div>
-    <div class="logs" id="logs"></div>
-    </div>
-  </nav>
-  <div class="menue" id="menue" style="display: none;">
+</nav>
+</header>
 
+<div class="hero"></div>
 
-  </div>
+<main>
+<div class="card shadow">
 
-  </header>
- <div class="hero"></div>
-  <main>
-    <div class="card shadow">
-    <button id="return"><a href="./search.html"><svg fill="#030a68" height="14px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" xml:space="preserve" stroke="#030a68"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M26.105,21.891c-0.229,0-0.439-0.131-0.529-0.346l0,0c-0.066-0.156-1.716-3.857-7.885-4.59 c-1.285-0.156-2.824-0.236-4.693-0.25v4.613c0,0.213-0.115,0.406-0.304,0.508c-0.188,0.098-0.413,0.084-0.588-0.033L0.254,13.815 C0.094,13.708,0,13.528,0,13.339c0-0.191,0.094-0.365,0.254-0.477l11.857-7.979c0.175-0.121,0.398-0.129,0.588-0.029 c0.19,0.102,0.303,0.295,0.303,0.502v4.293c2.578,0.336,13.674,2.33,13.674,11.674c0,0.271-0.191,0.508-0.459,0.562 C26.18,21.891,26.141,21.891,26.105,21.891z"></path> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>Back to Jobs</a></button>
-    <img id="cover" src="./assets/imgs/empty.jpg" width="100%" height="300px">
+    <button>
+        <a href="{% url 'search' %}">⬅ Back to Jobs</a>
+    </button>
+
+    <!-- صورة -->
+    <img src="{{ job.image.url }}" width="100%" height="300px">
+
+    <!-- العنوان -->
     <div class="head">
-    <h1 id="title"></h1>
-    <div class="loved">
-    <button class="saved" id="save"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4.45067 13.9082L11.4033 20.4395C11.6428 20.6644 11.7625 20.7769 11.9037 20.8046C11.9673 20.8171 12.0327 20.8171 12.0963 20.8046C12.2375 20.7769 12.3572 20.6644 12.5967 20.4395L19.5493 13.9082C21.5055 12.0706 21.743 9.0466 20.0978 6.92607L19.7885 6.52734C17.8203 3.99058 13.8696 4.41601 12.4867 7.31365C12.2913 7.72296 11.7087 7.72296 11.5133 7.31365C10.1304 4.41601 6.17972 3.99058 4.21154 6.52735L3.90219 6.92607C2.25695 9.0466 2.4945 12.0706 4.45067 13.9082Z" stroke="#EF4343" stroke-width="2"></path> </g></svg></button>
-    <button class="compare"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 8V15.3C18 16.4201 18 16.9802 17.782 17.408C17.5903 17.7843 17.2843 18.0903 16.908 18.282C16.4802 18.5 15.9201 18.5 14.8 18.5H12M18 8C19.3807 8 20.5 6.88071 20.5 5.5C20.5 4.11929 19.3807 3 18 3C16.6193 3 15.5 4.11929 15.5 5.5C15.5 6.88071 16.6193 8 18 8ZM12 18.5L14 16M12 18.5L14 21M6 16V8.7C6 7.5799 6 7.01984 6.21799 6.59202C6.40973 6.21569 6.71569 5.90973 7.09202 5.71799C7.51984 5.5 8.0799 5.5 9.2 5.5H12M6 16C4.61929 16 3.5 17.1193 3.5 18.5C3.5 19.8807 4.61929 21 6 21C7.38071 21 8.5 19.8807 8.5 18.5C8.5 17.1193 7.38071 16 6 16ZM12 5.5L10 8M12 5.5L10 3" stroke="#F46734" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <h1>{{ job.title }}</h1>
     </div>
-    </div>
-    <h3><svg id="mysvg"  fill="#ff7e14" width="18px" height="18px" viewBox="-2 0 16 16" id="company-16px" xmlns="http://www.w3.org/2000/svg" stroke="#ff7e14" stroke-width="0.00016"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="Path_133" data-name="Path 133" d="M323.5-192h-9a1.5,1.5,0,0,0-1.5,1.5V-176h12v-14.5A1.5,1.5,0,0,0,323.5-192ZM318-177v-3h2v3Zm6,0h-3v-3.5a.5.5,0,0,0-.5-.5h-3a.5.5,0,0,0-.5.5v3.5h-3v-13.5a.5.5,0,0,1,.5-.5h9a.5.5,0,0,1,.5.5Zm-8-12h2v2h-2Zm4,0h2v2h-2Zm-4,4h2v2h-2Zm4,0h2v2h-2Z" transform="translate(-313 192)"></path> </g></svg>
-       <span id="company"></span></h3>
-    <ul id="d" style="text-decoration: none;">
-    <li style="display: inline;" ><svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#080745"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM3.00683 12C3.00683 16.9668 7.03321 20.9932 12 20.9932C16.9668 20.9932 20.9932 16.9668 20.9932 12C20.9932 7.03321 16.9668 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12Z" fill="#080745"></path> <path d="M12 5C11.4477 5 11 5.44771 11 6V12.4667C11 12.4667 11 12.7274 11.1267 12.9235C11.2115 13.0898 11.3437 13.2343 11.5174 13.3346L16.1372 16.0019C16.6155 16.278 17.2271 16.1141 17.5032 15.6358C17.7793 15.1575 17.6155 14.5459 17.1372 14.2698L13 11.8812V6C13 5.44772 12.5523 5 12 5Z" fill="#080745"></path> </g></svg><span id="time"></span></li>
+
+    <!-- الشركة -->
+    <h3>{{ job.company }}</h3>
+
+    <!-- الوقت -->
+    <ul>
+        <li>{{ job.created_at }}</li>
     </ul>
-     <ul style="text-decoration: none;" class="tags" id="tags"></ul>
-    
-     <ul class="info" style="text-decoration: none;" >
-        <li class="money"><h5>Salary</h5><svg id="mysvg" fill="#8ef0b4" width="14px" height="19px" viewBox="0 0 4 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>dollar</title> <path d="M4.88 15.24v-4.64c0.88 0.32 1.52 1.2 1.52 2.2 0 0.48 0.36 0.84 0.84 0.84s0.84-0.36 0.84-0.84c0-1.92-1.36-3.56-3.2-3.96v-0.88c0-0.48-0.36-0.84-0.84-0.84s-0.84 0.36-0.84 0.84v0.88c-1.84 0.4-3.2 2-3.2 3.96s1.36 3.56 3.2 3.96v4.64c-0.88-0.32-1.52-1.2-1.52-2.2 0-0.48-0.36-0.84-0.84-0.84s-0.84 0.36-0.84 0.84c0 1.92 1.36 3.56 3.2 3.96v0.88c0 0.48 0.36 0.84 0.84 0.84s0.84-0.36 0.84-0.84v-0.88c1.84-0.4 3.2-2 3.2-3.96s-1.4-3.56-3.2-3.96zM1.68 12.8c0-1 0.64-1.88 1.52-2.2v4.4c-0.88-0.32-1.52-1.2-1.52-2.2zM4.88 21.4v-4.4c0.88 0.32 1.52 1.2 1.52 2.2s-0.64 1.84-1.52 2.2z"></path> </g></svg><span id="salary"></span></li>
-       <li class="loctag"><h5>Location</h5><svg  id="mysvg" width="19px" height="17px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ff7e14"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="##ff7e14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="##ff7e14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg><span  id="location"></span> </li>
-        <li class="typetag"><h5>Type</h5><svg width="19px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 9C2 7.89543 2.89543 7 4 7H20C21.1046 7 22 7.89543 22 9V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V9Z" stroke="#17095d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M16 7V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V7" stroke="#17095d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M22 12H2" stroke="#17095d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7 12V14" stroke="#17095d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M17 12V14" stroke="#17095d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> <span id="type"></span></li>
-        <li class="exptag"><h5>Experience</h5><svg width="20px" height="19px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#faf200" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M45.41,11.16l.86,2.61a3.75,3.75,0,0,0,1.5,2L50,17.21a3.85,3.85,0,0,1,1.43,4.62l-.84,2.09a3.83,3.83,0,0,0,0,2.88l.83,2a3.83,3.83,0,0,1-1.32,4.58L48.13,34.8a3.86,3.86,0,0,0-1.46,2.08L46,39.32a3.84,3.84,0,0,1-4,2.78l-2.1-.18a3.88,3.88,0,0,0-2.74.84l-2,1.63a3.83,3.83,0,0,1-4.85,0L28.54,43a3.85,3.85,0,0,0-2.45-.88H23a3.83,3.83,0,0,1-3.74-3l-.55-2.35a3.82,3.82,0,0,0-1.58-2.31L15.3,33.19a3.84,3.84,0,0,1-1.45-4.48l.86-2.36a3.86,3.86,0,0,0,0-2.66l-.77-2.06a3.86,3.86,0,0,1,1.51-4.58l2-1.31a3.87,3.87,0,0,0,1.61-2.19l.61-2.18a3.85,3.85,0,0,1,4-2.79l1.93.17a3.88,3.88,0,0,0,2.74-.84l1.83-1.48a3.84,3.84,0,0,1,4.87,0L36.7,7.81a3.82,3.82,0,0,0,2.75.88l2-.15A3.84,3.84,0,0,1,45.41,11.16Z"></path><path d="M44.59,41.57l7,12.21c.18.31,0,.64-.23.55l-8.61-3.5a.24.24,0,0,0-.31.19l-1.06,9c-.06.29-.42.25-.6-.06L32.65,45.25" stroke-linecap="round"></path><path d="M32.65,45.25,25.14,60c-.19.31-.53.35-.6.07l-1.27-9.2a.24.24,0,0,0-.31-.18L14.59,54.3c-.28.08-.43-.24-.24-.56l7-12.17" stroke-linecap="round"></path><path d="M32.74,16.89l2.7,5.49a.1.1,0,0,0,.08.05l6,.88c.08,0,.12.12.06.17l-4.38,4.27a.09.09,0,0,0,0,.09l1,6a.1.1,0,0,1-.14.11l-5.42-2.85a.07.07,0,0,0-.09,0L27.19,34a.11.11,0,0,1-.15-.11l1-6a.1.1,0,0,0,0-.09l-4.39-4.27a.11.11,0,0,1,.06-.17l6.05-.88a.09.09,0,0,0,.08-.05l2.71-5.49A.1.1,0,0,1,32.74,16.89Z" stroke-linecap="round"></path></g></svg><span id="exp"></span></li>
-     </ul>
-    </div>
+
+    <!-- Tags -->
+    <ul class="tags">
+        {% for tag in job.tags.all %}
+            <li>{{ tag.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- معلومات -->
+    <ul class="info">
+        <li>
+            <h5>Salary</h5>
+            <span>{{ job.salary }}</span>
+        </li>
+
+        <li>
+            <h5>Location</h5>
+            <span>{{ job.location }}</span>
+        </li>
+
+        <li>
+            <h5>Type</h5>
+            <span>{{ job.job_type }}</span>
+        </li>
+
+        <li>
+            <h5>Experience</h5>
+            <span>{{ job.experience }}</span>
+        </li>
+    </ul>
+
+</div>
+
 <div class="grid">
+
+    <!-- التفاصيل -->
     <div class="details">
+
         <div class="bord">
-        <div id="about" class="shadow">
-      <h2>About this role</h2>
-     <p id="description"></p>
+            <div class="shadow">
+                <h2>About this role</h2>
+                <p>{{ job.description }}</p>
+            </div>
+        </div>
+
+        <!-- Requirements -->
+        <div class="bord">
+            <div class="shadow">
+                <h2>Requirements</h2>
+                <ul>
+                    {% for req in job.requirements.all %}
+                        <li>{{ req.text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <!-- Benefits -->
+        <div class="bord">
+            <div class="shadow">
+                <h2>Benefits & Perks</h2>
+                <ul>
+                    {% for b in job.benefits.all %}
+                        <li>{{ b.text }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
     </div>
+
+    <!-- الشركة -->
+    <div class="Comp">
+
+        <div class="shadow">
+            <h2>About company</h2>
+
+            <ul>
+                <li>{{ job.company_location }}</li>
+                <li>{{ job.employees_count }} employees</li>
+            </ul>
+        </div>
+
+        <div class="apply">
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit">Apply Now</button>
+            </form>
+        </div>
+
     </div>
-     <div class="bord">
-    <div class="req shadow">
-     <h2>Requirements</h2>
-     <ul id="required"></ul>
-     </div>
-     </div>
-     <div class="bord">
-     <div class="benefits shadow">
-     <h2>Benefits & Perks</h2>
-     <ul id="benefit"></ul>
-     </div>
-     </div>
-  
-  </div>
-  <div class="Comp">
-    <div class="Cinfo shadow">
-    <h2>About company</h2>
-    <ul style="list-style: none;">
-        <li><svg width="20px" height="17px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#1b1d36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="#1b1d36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg><span id="companyLocation"></span></li>
-        <li><svg width="20px" height="18px" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3 18C3 15.3945 4.66081 13.1768 6.98156 12.348C7.61232 12.1227 8.29183 12 9 12C9.70817 12 10.3877 12.1227 11.0184 12.348C11.3611 12.4703 11.6893 12.623 12 12.8027C12.3107 12.623 12.6389 12.4703 12.9816 12.348C13.6123 12.1227 14.2918 12 15 12C15.7082 12 16.3877 12.1227 17.0184 12.348C19.3392 13.1768 21 15.3945 21 18V21H15.75V19.5H19.5V18C19.5 15.5147 17.4853 13.5 15 13.5C14.4029 13.5 13.833 13.6163 13.3116 13.8275C14.3568 14.9073 15 16.3785 15 18V21H3V18ZM9 11.25C8.31104 11.25 7.66548 11.0642 7.11068 10.74C5.9977 10.0896 5.25 8.88211 5.25 7.5C5.25 5.42893 6.92893 3.75 9 3.75C10.2267 3.75 11.3158 4.33901 12 5.24963C12.6842 4.33901 13.7733 3.75 15 3.75C17.0711 3.75 18.75 5.42893 18.75 7.5C18.75 8.88211 18.0023 10.0896 16.8893 10.74C16.3345 11.0642 15.689 11.25 15 11.25C14.311 11.25 13.6655 11.0642 13.1107 10.74C12.6776 10.4869 12.2999 10.1495 12 9.75036C11.7001 10.1496 11.3224 10.4869 10.8893 10.74C10.3345 11.0642 9.68896 11.25 9 11.25ZM13.5 18V19.5H4.5V18C4.5 15.5147 6.51472 13.5 9 13.5C11.4853 13.5 13.5 15.5147 13.5 18ZM11.25 7.5C11.25 8.74264 10.2426 9.75 9 9.75C7.75736 9.75 6.75 8.74264 6.75 7.5C6.75 6.25736 7.75736 5.25 9 5.25C10.2426 5.25 11.25 6.25736 11.25 7.5ZM15 5.25C13.7574 5.25 12.75 6.25736 12.75 7.5C12.75 8.74264 13.7574 9.75 15 9.75C16.2426 9.75 17.25 8.74264 17.25 7.5C17.25 6.25736 16.2426 5.25 15 5.25Z" fill="#080341"></path> </g></svg><span id="employees"></span></li>
-    </ul>
-    </div>
-    <div class="apply">
-     <button class="a shadow" id="apply">Apply Now</button>
-  </div>
-    </div>
-  
-</div>
-<div class="g shadow">
-    <h2>Workplace Gallery</h2>
-<div class="slider-wrap">
-  <div class="Gallery" id="gallery"></div>
-  <div class="motion">
-   <button class="slider-btn" id="prev">&#8592;</button>
-   <div class="slider-dots" id="dots"></div>
-  <button class="slider-btn" id="next">&#8594;</button>
-  </div>
-</div>
 
 </div>
 
- 
 </main>
+
 <footer class="footer">
     <div class="footer__inner">
-
-      <div class="footer__top">
-
-        <div class="footer__brand">
-          <div class="footer__brand-name">
-            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="8" fill="#2B3EEE"/>
-              <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            saboba
-          </div>
-          <p class="footer__brand-desc">Find your dream job or hire the best talent — all in one place.</p>
+        <div class="footer__bottom">
+            <span>© 2026 JobFlow</span>
         </div>
-
-        <div>
-          <h4 class="footer__col-title">Job Seekers</h4>
-          <ul class="footer__col-links">
-            <li><a href="search.html">Browse Jobs</a></li>
-            <li><a href="AppliedJobs.html">Applications</a></li>
-            <li><a href="profile.html">My Profile</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer__col-title">Employers</h4>
-          <ul class="footer__col-links">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="joblist.html">Jobs List</a></li>
-            <li><a href="addjob.html">Add Job</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer__col-title">Platform</h4>
-          <ul class="footer__col-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer__bottom">
-        <span>© 2026 JobFlow. All rights reserved.</span>
-        <div style="display:flex;gap:1.5rem;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
-      </div>
-
     </div>
-  </footer>
-<script src="./js/jobdetails.js"></script>
-<script src="./js/navbar.js"></script>
-<script src="./js/logout.js"></script>
+</footer>
+
 </body>
 </html>

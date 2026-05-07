@@ -1,3 +1,19 @@
+#reset {
+  text-decoration: none;
+}
+
+.cover {
+  background: #ddd;
+}
+
+.filter {
+  margin-bottom: -30px;
+}
+
+.job-list {
+  margin-bottom: 60px;
+}
+
 *{
     margin: 0px;
     padding: 0px;
