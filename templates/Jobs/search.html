@@ -20,7 +20,8 @@
 
         <div class="searchdiv">
             <form method="GET">
-    <input name="q" id="search" type="text" placeholder="Search job title...">
+              
+    <input name="q" value="{{ request.GET.q }}" id="search" type="text" placeholder="Search job title...">
     <button type="submit">Search</button>
 
 

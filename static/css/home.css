@@ -311,6 +311,29 @@ img { max-width: 100%; display: block; }
   flex-shrink: 0;
 }
 
+button[type="submit"] {
+  height: 45px;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0F1729, #2B3EEE);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover */
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(43,62,238,0.3);
+}
+
+/* click */
+button[type="submit"]:active {
+  transform: scale(0.97);
+}
+
 /* Popular tags */
 .hero__popular {
   display: flex;
