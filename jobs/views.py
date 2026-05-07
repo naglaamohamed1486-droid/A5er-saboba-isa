@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from .models import Job
@@ -23,19 +23,45 @@ def add_jobs(request):
     if request.method == "POST":
         form = JobForm(request.POST)
         if form.is_valid():
-            form.save()
+            job = form.save(commit=False)
+            job.employer = request.user
+            job.save()
+
             messages.success(request, "Job added successfully ✅")
-            return redirect('add_jobs')
+            return redirect('job_list')
         else:
             print(form.errors)
     else:
         form = JobForm()
 
     return render(request, 'jobs/addjob.html', {'form': form})
-   
+
 #naglaa
 
+def dashboard(request):
+    jobs = Job.objects.filter(employer=request.user)
 
+    total_applications = 0  
+
+    return render(request, 'jobs/dashboard.html', {
+        'jobs': jobs,
+        'total_jobs': jobs.count(),
+        'total_applications': total_applications,
+    })
+
+def job_list(request):
+    jobs = Job.objects.filter(employer=request.user)
+
+    return render(request, 'jobs/joblist.html', {
+        'jobs': jobs,
+        'total_jobs': jobs.count()
+    })
+
+
+def delete_job(request, id):
+    job = get_object_or_404(Job, id=id, employer=request.user)
+    job.delete()
+    return redirect('job_list')
 
 #habiba
 
