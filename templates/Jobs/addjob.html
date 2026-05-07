@@ -2,84 +2,255 @@
 <html lang="en">
 <head>
   {% load static %}
-    <meta charset="UTF-8">
-    <title>Post a New Job </title>
-   <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-   <link rel="stylesheet" href="{% static 'css/addjob.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post a New Job — Saboba</title>
+  <link rel="stylesheet" href="{% static 'css/addjob.css' %}">
 </head>
-<body class="bg-dark-top">
- <header>
-    <nav class="nav">
-    <a href="index.html" class="logo">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="mainGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F1729"/>
-      <stop offset="50%" stop-color="#1a2456"/>
-      <stop offset="100%" stop-color="#2B3EEE"/>
-    </linearGradient>
-  </defs>
+<body>
 
-  <rect width="32" height="32" rx="8" fill="url(#mainGradient)"/>
-  <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 17h-2.4A3 3 0 0 1 9 14.7L7.6 11.3A1 1 0 0 1 8.6 10H23.4a1 1 0 0 1 .9 1.3L23 14.7A3 3 0 0 1 20.6 17H18"
-        fill="none" stroke="#F46734" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="14" y="16" width="4" height="3" rx="1"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-      <p class="slog">Saboba</p>
-    </a>
-    <ul class="links" id="links"></ul>
-    <div class="right">
-    <div class="burger" id="burger" >
-    <button onclick=""><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#213a73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
-    </div>
-    <div class="logs" id="logs"></div>
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar">
+    <div class="nav-content">
+
+      <a href="index.html" class="logo logo-link">
+        <svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#0F1729"/>
+              <stop offset="50%" stop-color="#1a2456"/>
+              <stop offset="100%" stop-color="#2B3EEE"/>
+            </linearGradient>
+          </defs>
+          <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+          <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z"
+                fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z"
+                fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14 17h-2.4A3 3 0 0 1 9 14.7L7.6 11.3A1 1 0 0 1 8.6 10H23.4a1 1 0 0 1 .9 1.3L23 14.7A3 3 0 0 1 20.6 17H18"
+                fill="none" stroke="#F46734" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="14" y="16" width="4" height="3" rx="1"
+                fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Saboba</span>
+      </a>
+
+      <div class="nav-links" id="links">
+        <a href="index.html">Home</a>
+        <a href="search.html">Browse Jobs</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="addjob.html" class="active">Post a Job</a>
+      </div>
+
+      <div class="nav-right" id="logs"></div>
+
     </div>
   </nav>
-  <div class="menue" id="menue" style="display: none;">
 
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12l7-7 7 7"/></svg>
+        Employer Portal
+      </div>
+      <h1>Post a New Job</h1>
+      <p>Fill in the details below to publish a listing and reach thousands of qualified candidates.</p>
+    </div>
+  </section>
 
+  <!-- ===================== FORM ===================== -->
+  <main class="form-container">
+    {% if messages %}
+  {% for message in messages %}
+    <div class="toast">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+
+{% if form.errors %}
+  <div style="color:red;">
+    {{ form.errors }}
   </div>
+{% endif %}
+    <form method="POST">
+      {% csrf_token %}
 
-</header>
-    <section class="hero compact-hero">
-        <div class="hero-container">
-            <h1>Add Job</h1>
-            <p>Fill in the details to create a new job listing</p>
+      <!-- ── Card 1: Job Overview ── -->
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Job Overview</h3>
+            <p>The essentials candidates see first</p>
+          </div>
         </div>
-    </section>
 
-    <main class="form-container">
-         <form method="POST">
-          {% csrf_token %}
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="id_title">Job Title <span class="required">*</span></label>
+            {{ form.title }}
+          </div>
+          <div class="input-group">
+            <label for="id_company">Company Name <span class="required">*</span></label>
+            {{ form.company }}
+          </div>
+          <div class="input-group">
+            <label for="id_location">Job Location <span class="required">*</span></label>
+            {{ form.location }}
+          </div>
+          <div class="input-group">
+            <label for="id_type">Job Type <span class="required">*</span></label>
+            {{ form.type }}
+            <span class="input-hint">e.g. Full-time, Part-time, Freelance</span>
+          </div>
+          <div class="input-group">
+            <label for="id_exp">Experience Level <span class="required">*</span></label>
+            {{ form.exp }}
+            <span class="input-hint">e.g. Junior, Mid-level, Senior</span>
+          </div>
+          <div class="input-group">
+            <label for="id_time">Time Commitment <span class="required">*</span></label>
+            {{ form.time }}
+        
+          </div>
+        </div>
+      </div>
 
-          {{ form.as_p }}
+      <!-- ── Card 2: Compensation & Tags ── -->
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Compensation &amp; Tags</h3>
+            <p>Salary info and searchable keywords</p>
+          </div>
+        </div>
 
-  <button type="reset" class="btn-cancel">Reset</button>
-  <button type="submit" class="btn-post">⚡ Add Job</button>
-</form>
-    
-    </main>
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="id_salary">Salary / Range <span class="required">*</span></label>
+            {{ form.salary }}
+            
+          </div>
+          <div class="input-group">
+            <label for="id_tags">Tags <span class="required">*</span></label>
+            {{ form.tags }}
+            
+          </div>
+        </div>
+      </div>
 
-   <!--FOOTER-->
- <footer class="footer">
+      <!-- ── Card 3: Job Description ── -->
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Job Description</h3>
+            <p>Describe the role, responsibilities and what you're looking for</p>
+          </div>
+        </div>
+
+        <div class="input-group full-width">
+          <label for="id_description">Description <span class="required">*</span></label>
+          {{ form.description }}
+          <span class="input-hint">Outline responsibilities, day-to-day tasks, and the impact of this role.</span>
+        </div>
+
+        <div class="input-group full-width" style="margin-top:1.25rem;">
+          <label for="id_required">Requirements <span class="required">*</span></label>
+          {{ form.required }}
+        
+        </div>
+
+        <div class="input-group full-width" style="margin-top:1.25rem;">
+          <label for="id_benefit">Benefits <span class="required">*</span></label>
+          {{ form.benefit }}
+         
+        </div>
+      </div>
+
+      <!-- ── Card 4: Company Info ── -->
+      <div class="card">
+        <div class="card-title">
+          <div class="card-title-icon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Company Info</h3>
+            <p>Details about the company behind the role</p>
+          </div>
+        </div>
+
+        <div class="input-grid">
+          <div class="input-group">
+            <label for="id_companyLocation">Company HQ Location <span class="required">*</span></label>
+            {{ form.companyLocation }}
+            <span class="input-hint">e.g. San Francisco, CA</span>
+          </div>
+          <div class="input-group">
+            <label for="id_employees">Number of Employees <span class="required">*</span></label>
+            {{ form.employees }}
+            <span class="input-hint">e.g. 50–200, 1,000+</span>
+          </div>
+          <div class="input-group">
+            <label for="id_cover">Cover / Logo Image URL <span class="required">*</span></label>
+            {{ form.cover }}
+            <span class="input-hint">Paste a direct URL to the company logo or cover image</span>
+          </div>
+          <div class="input-group full-width">
+            <label for="id_gallery">Gallery Image URLs <span class="required">*</span></label>
+            {{ form.gallery }}
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Actions ── -->
+      <div class="form-footer-action">
+        <button type="reset" class="btn-cancel">Reset</button>
+        <button type="submit" class="btn-post">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Post Job Listing
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
     <div class="footer__inner">
-
       <div class="footer__top">
 
         <div class="footer__brand">
           <div class="footer__brand-name">
-            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+            <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
               <rect width="32" height="32" rx="8" fill="#2B3EEE"/>
               <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
               <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
-            saboba
+            Saboba
           </div>
           <p class="footer__brand-desc">Find your dream job or hire the best talent — all in one place.</p>
         </div>
@@ -98,7 +269,7 @@
           <ul class="footer__col-links">
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="joblist.html">Jobs List</a></li>
-            <li><a href="addjob.html">Add Job</a></li>
+            <li><a href="addjob.html">Post a Job</a></li>
           </ul>
         </div>
 
@@ -112,19 +283,20 @@
         </div>
 
       </div>
-
       <div class="footer__bottom">
-        <span>© 2026 JobFlow. All rights reserved.</span>
+        <span>© 2026 Saboba. All rights reserved.</span>
         <div style="display:flex;gap:1.5rem;">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Service</a>
         </div>
       </div>
-
     </div>
   </footer>
-<script src="{% static 'js/add.js' %}"></script>
-<script src="{% static 'js/navbar.js' %}"></script>
-<script src="{% static 'js/logout.js' %}"></script>
+
+  <!-- <script src="{% static 'js/add.js' %}"></script> -->
+  <script src="{% static 'js/navbar.js' %}"></script>
+  <script src="{% static 'js/logout.js' %}"></script>
+ 
+
 </body>
 </html>
