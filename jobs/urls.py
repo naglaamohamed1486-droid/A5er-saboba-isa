@@ -6,8 +6,10 @@ urlpatterns = [
     path('joblist/', views.job_list, name='job_list'),
     path('add/', views.add_jobs, name='add_jobs')
    #naglaa
+   #anaaaaaa henaaaaa 
+   #where the hell is my hu
 
 
-   
+
    #habiba
 ]
