@@ -189,7 +189,7 @@
           <p class="section__eyebrow">Hand-picked for you</p>
           <h2 class="section__title">Featured Jobs</h2>
         </div>
-        <a href="search.html" class="link-arrow">View all jobs →</a>
+        <a href="{% url 'search' %}" class="link-arrow">View all jobs →</a>
       </div>
 
       <div class="jobs-grid">
@@ -303,7 +303,7 @@
         <div>
           <h4 class="footer__col-title">Job Seekers</h4>
           <ul class="footer__col-links">
-            <li><a href="search.html">Browse Jobs</a></li>
+            <li><a href="{% url 'search' %}">Browse Jobs</a></li>
             <li><a href="AppliedJobs.html">Applications</a></li>
             <li><a href="profile.html">My Profile</a></li>
           </ul>
