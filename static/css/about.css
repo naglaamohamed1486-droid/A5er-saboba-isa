@@ -1,13 +1,84 @@
 /* =========================
    General Styles
    ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: #f8fafc;
     margin: 0;
 
 }
-main{
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+    --background: #F6F7F9;
+    --foreground: #0F1729;
+    --card: #FFFFFF;
+    --card-foreground: #0F1729;
+    --popover: #FFFFFF;
+    --border: #E5E7EB;
+    --input: #E5E7EB;
+
+    --primary: #2B3EEE;
+    --primary-fg: #FFFFFF;
+    --accent: #F46734;
+    --accent-fg: #FFFFFF;
+    --secondary: #F3F4F6;
+    --secondary-fg: #0F1729;
+    --ring: #2B3EEE;
+    --muted: #F3F4F6;
+    --muted-fg: #6B7280;
+    --destructive: #EF4343;
+
+    --emerald: #20AC6B;
+    --amber: #F59F0A;
+    --rose: #EA2E6D;
+    --sky: #0DA2E7;
+    --violet: #7847EB;
+
+    --section-warm: #FEF4F0;
+    --section-cool: #F3F4FC;
+    --section-mint: #F1F9F5;
+
+    --sidebar-background: #FFFFFF;
+    --sidebar-foreground: #0F1729;
+    --sidebar-primary: #2B3EEE;
+    --sidebar-accent: #F3F4F6;
+    --sidebar-border: #E5E7EB;
+
+    --gradient-primary: linear-gradient(135deg, #2B3EEE, #7847EB);
+    --gradient-accent: linear-gradient(135deg, #F46734, #EA2E6D);
+    --gradient-hero: linear-gradient(135deg, #0F1729 0%, #1a2456 50%, #2B3EEE22 100%);
+    --gradient-success: linear-gradient(135deg, #20AC6B, #0DA2E7);
+    --gradient-card: linear-gradient(135deg, #FFFFFF, #F6F7F9);
+
+    --radius: 0.75rem;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+main {
     margin-top: 68px;
 }
 
@@ -49,7 +120,9 @@ main{
 /* =========================
    Mission Section
    ========================= */
-.mission-section { padding: 80px 0; }
+.mission-section {
+    padding: 80px 0;
+}
 
 .mission-grid {
     display: grid;
@@ -105,7 +178,7 @@ main{
     padding: 40px 20px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
     transition: 0.3s;
 }
 
@@ -166,7 +239,7 @@ main{
 .quote-section {
     padding: 100px 0;
     background: linear-gradient(rgba(15, 23, 41, 0.9), rgba(15, 23, 41, 0.9)),
-                url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200');
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200');
     background-size: cover;
     color: white;
     text-align: center;
@@ -195,7 +268,7 @@ main{
     padding: 30px 20px;
     border-radius: 20px;
     width: 200px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -220,45 +293,31 @@ main{
     transform: rotate(5deg);
 }
 
-/* =========================
-   Footer
-   ========================= */
-.footer {
-  background: var(--foreground);
-  color: rgba(255,255,255,0.7);
-  padding: 4rem 2rem 2rem;
-}
 
-.footer__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.footer__top {
-  display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-}
 
 /* =========================
    Animations
    ========================= */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* =========================
