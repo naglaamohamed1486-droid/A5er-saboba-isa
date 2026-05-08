@@ -19,11 +19,15 @@ def admin_required(view_func):
 
 def search(request):
     query = request.GET.get('q')
+    tag = request.GET.get('tag')
 
-    jobs = Job.objects.all()  # دا الأساس
+    jobs = Job.objects.all()
 
     if query:
         jobs = jobs.filter(title__icontains=query)
+
+    if tag:
+        jobs = jobs.filter(tags__icontains=tag)
 
     return render(request, 'jobs/search.html', {'jobs': jobs})
 
@@ -112,4 +116,16 @@ def compare_view(request):
 def applied_jobs_view(request):
     # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
     return render(request, 'jobs/AppliedJobs.html')
+
+def toggle_save_job(request, job_id):
+    job = get_object_or_404(Job, id=job_id)
+
+    saved = SavedJob.objects.filter(user=request.user, job=job)
+
+    if saved.exists():
+        saved.delete()
+    else:
+        SavedJob.objects.create(user=request.user, job=job)
+
+    return redirect('search')
                                                                                                                                                                                                                                                 
