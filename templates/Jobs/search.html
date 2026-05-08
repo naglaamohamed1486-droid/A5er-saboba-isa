@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <title>Search Jobs</title>
-    <link rel="stylesheet" href="{% static 'css/search.css' %}">
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
+{% block content %}
 <!-- HERO -->
 <section class="hero">
     <h1>Find Your Job</h1>
@@ -20,39 +18,39 @@
 
         <div class="searchdiv">
             <form method="GET">
-              
-    <input name="q" value="{{ request.GET.q }}" id="search" type="text" placeholder="Search job title...">
-    <button type="submit">Search</button>
+
+                <input name="q" value="{{ request.GET.q }}" id="search" type="text" placeholder="Search job title...">
+                <button type="submit">Search</button>
 
 
-            <select id="location">
-                <option>all locations</option>
-                <option>Cairo</option>
-                <option>Remote</option>
-            </select>
+                <select id="location">
+                    <option>all locations</option>
+                    <option>Cairo</option>
+                    <option>Remote</option>
+                </select>
 
-            <select id="Types">
-                <option>all types</option>
-                <option>Full-time</option>
-                <option>Part-time</option>
-                <option>Freelance</option>
-            </select>
+                <select id="Types">
+                    <option>all types</option>
+                    <option>Full-time</option>
+                    <option>Part-time</option>
+                    <option>Freelance</option>
+                </select>
 
-            <select id="Tags">
-                <option>all-tags</option>
-                <option>React</option>
-                <option>Django</option>
-                <option>CSS</option>
-                <option>JavaScript</option>
-                <option>TypeScript</option>
-                <option>HTML</option>
-                <option>UI</option>
-            </select>
+                <select id="Tags">
+                    <option>all-tags</option>
+                    <option>React</option>
+                    <option>Django</option>
+                    <option>CSS</option>
+                    <option>JavaScript</option>
+                    <option>TypeScript</option>
+                    <option>HTML</option>
+                    <option>UI</option>
+                </select>
 
-            <button id="f">Filters</button>
-            <button id="reset">Reset</button>
+                <button id="f">Filters</button>
+                <button id="reset">Reset</button>
         </div>
-</form>
+        </form>
     </div>
 </div>
 
@@ -80,10 +78,10 @@
                 </ul>
 
                 <ul class="tag">
-    {% for tag in job.tags %}
-        <li>{{ tag }}</li>
-    {% endfor %}
-</ul>
+                    {% for tag in job.tags %}
+                    <li>{{ tag }}</li>
+                    {% endfor %}
+                </ul>
 
                 <hr>
 
@@ -103,7 +101,7 @@
 
 </main>
 
+{% block scripts %}
 <script src="{% static 'js/search.js' %}"></script>
-
-</body>
-</html>
+{% endblock %}
+{% endblock %}

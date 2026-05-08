@@ -38,7 +38,7 @@ body {
 .success-icon {
     width: 80px;
     height: 80px;
-    background: #2B3EEE; 
+    background: #2B3EEE;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -70,7 +70,7 @@ strong {
 /* Button Style */
 .btn-back-home {
     display: inline-block;
-    background: #F46734; 
+    background: #F46734;
     color: white;
     padding: 16px 35px;
     border-radius: 14px;
@@ -92,6 +92,7 @@ strong {
         opacity: 0;
         transform: translateY(40px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -103,6 +104,7 @@ strong {
     .thank-you-card {
         padding: 40px 20px;
     }
+
     h1 {
         font-size: 1.8rem;
     }
