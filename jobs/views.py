@@ -104,3 +104,11 @@ def edit_job(request, id):
 def jobDetails(request, id):
     job = get_object_or_404(Job, id=id)
     return render(request, 'jobs/jobDetails.html', {'job': job})
+
+# تأكدي إن السطر اللي تحت def واخد مسافة لليمين
+def compare_view(request):
+    return render(request, 'jobs/compare.html')
+
+def applied_jobs_view(request):
+    # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
+    return render(request, 'jobs/AppliedJobs.html')
