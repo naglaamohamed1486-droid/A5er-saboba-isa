@@ -1,223 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  {% load static %}
-    <meta charset="UTF-8">
-    <title>Edit Job - Saboba</title>
-   <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-   <link rel="stylesheet" href="{% static 'css/addjob.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body class="bg-dark-top">
-    <!-- HEADER -->
- <header>
-    <nav class="nav">
-    <a href="index.html" class="logo">
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="mainGradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0F1729"/>
-      <stop offset="50%" stop-color="#1a2456"/>
-      <stop offset="100%" stop-color="#2B3EEE"/>
-    </linearGradient>
-  </defs>
+{% extends "base.html" %}
+{% load static %}
 
-  <rect width="32" height="32" rx="8" fill="url(#mainGradient)"/>
-  <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M14 17h-2.4A3 3 0 0 1 9 14.7L7.6 11.3A1 1 0 0 1 8.6 10H23.4a1 1 0 0 1 .9 1.3L23 14.7A3 3 0 0 1 20.6 17H18"
-        fill="none" stroke="#F46734" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="14" y="16" width="4" height="3" rx="1"
-        fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-      <p class="slog">Saboba</p>
-    </a>
-    <ul class="links" id="links"></ul>
-    <div class="right">
-    <div class="burger" id="burger" >
-    <button onclick=""><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#213a73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
-    </div>
-    <div class="logs" id="logs"></div>
-    </div>
-  </nav>
-  <div class="menue" id="menue" style="display: none;">
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/editjob.css' %}">
+{% endblock %}
 
+{% block content %}
 
+<!-- HERO -->
+<section class="hero compact-hero">
+  <div class="hero-container">
+    <h1>Edit Job</h1>
+    <p>Update the details for this job listing</p>
   </div>
+</section>
 
-</header>
-    <!-- HERO -->
-    <section class="hero compact-hero">
-        <div class="hero-container">
-            <h1>Edit Job</h1>
-            <p>Update the details for this job listing</p>
+<!-- MAIN FORM -->
+<main class="form-container">
+  <form method="POST">
+    {% csrf_token %}
+
+    <div class="card">
+      <div class="card-title">
+        <h3>Job Details</h3>
+      </div>
+
+      <div class="input-grid">
+        <div class="input-group">
+          <label>Cover URL</label>
+          <input name="cover" type="url" value="{{ job.cover }}" required>
         </div>
-    </section>
 
-    <!-- MAIN FORM -->
-    <main class="form-container">
-<form method="POST">
-{% csrf_token %}
+        <div class="input-group">
+          <label>Job Title</label>
+          <input name="title" type="text" value="{{ job.title }}" required>
+        </div>
 
-<div class="card">
-  <div class="card-title">
-    <h3>Job Details</h3>
-  </div>
+        <div class="input-group">
+          <label>Company Name</label>
+          <input name="company" type="text" value="{{ job.company }}" required>
+        </div>
 
-  <div class="input-grid">
-    <div class="input-group">
-      <label>Cover URL</label>
-      <input name="cover" type="url" value="{{ job.cover }}" required>
+        <div class="input-group">
+          <label>Location</label>
+          <input name="location" type="text" value="{{ job.location }}" required>
+        </div>
+
+        <div class="input-group">
+          <label>Time</label>
+          <input name="time" type="text" value="{{ job.time }}" required>
+        </div>
+
+        <div class="input-group">
+          <label>Salary</label>
+          <input name="salary" type="text" value="{{ job.salary }}" required>
+        </div>
+
+        <div class="input-group">
+          <label>Type</label>
+          <input name="type" type="text" value="{{ job.type }}" required>
+        </div>
+
+        <div class="input-group">
+          <label>Experience</label>
+          <input name="exp" type="text" value="{{ job.exp }}" required>
+        </div>
+
+        <div class="input-group">
+          <label>Company Location</label>
+          <input name="companyLocation" type="text" value="{{ job.companyLocation }}" required>
+        </div>
+
+        <div class="input-group">
+          <label>Employees</label>
+          <input name="employees" type="text" value="{{ job.employees }}" required>
+        </div>
+      </div>
     </div>
 
-    <div class="input-group">
-      <label>Job Title</label>
-      <input name="title" type="text" value="{{ job.title }}" required>
+    <div class="card">
+      <div class="card-title">
+        <h3>Additional Info</h3>
+      </div>
+
+      <div class="input-group full-width">
+        <label>Description</label>
+        <textarea name="description" rows="6" required>{{ job.description }}</textarea>
+      </div>
+
+      <div class="input-group full-width">
+        <label>Tags JSON</label>
+        <textarea name="tags" rows="3" required>{{ job.tags }}</textarea>
+      </div>
+
+      <div class="input-group full-width">
+        <label>Required JSON</label>
+        <textarea name="required" rows="3" required>{{ job.required }}</textarea>
+      </div>
+
+      <div class="input-group full-width">
+        <label>Benefit JSON</label>
+        <textarea name="benefit" rows="3" required>{{ job.benefit }}</textarea>
+      </div>
+
+      <div class="input-group full-width">
+        <label>Gallery JSON</label>
+        <textarea name="gallery" rows="3" required>{{ job.gallery }}</textarea>
+      </div>
     </div>
 
-    <div class="input-group">
-      <label>Company Name</label>
-      <input name="company" type="text" value="{{ job.company }}" required>
+    <div class="card">
+      <div class="form-footer-action">
+        <a href="{% url 'job_list' %}" class="btn-cancel">Cancel</a>
+        <button type="submit" class="btn-post">⚡ Update Job</button>
+      </div>
     </div>
 
-    <div class="input-group">
-      <label>Location</label>
-      <input name="location" type="text" value="{{ job.location }}" required>
-    </div>
-
-    <div class="input-group">
-      <label>Time</label>
-      <input name="time" type="text" value="{{ job.time }}" required>
-    </div>
-
-    <div class="input-group">
-      <label>Salary</label>
-      <input name="salary" type="text" value="{{ job.salary }}" required>
-    </div>
-
-    <div class="input-group">
-      <label>Type</label>
-      <input name="type" type="text" value="{{ job.type }}" required>
-    </div>
-
-    <div class="input-group">
-      <label>Experience</label>
-      <input name="exp" type="text" value="{{ job.exp }}" required>
-    </div>
-
-    <div class="input-group">
-      <label>Company Location</label>
-      <input name="companyLocation" type="text" value="{{ job.companyLocation }}" required>
-    </div>
-
-    <div class="input-group">
-      <label>Employees</label>
-      <input name="employees" type="text" value="{{ job.employees }}" required>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-title">
-    <h3>Additional Info</h3>
-  </div>
-
-  <div class="input-group full-width">
-    <label>Description</label>
-    <textarea name="description" rows="6" required>{{ job.description }}</textarea>
-  </div>
-
-  <div class="input-group full-width">
-    <label>Tags JSON</label>
-    <textarea name="tags" rows="3" required>{{ job.tags }}</textarea>
-  </div>
-
-  <div class="input-group full-width">
-    <label>Required JSON</label>
-    <textarea name="required" rows="3" required>{{ job.required }}</textarea>
-  </div>
-
-  <div class="input-group full-width">
-    <label>Benefit JSON</label>
-    <textarea name="benefit" rows="3" required>{{ job.benefit }}</textarea>
-  </div>
-
-  <div class="input-group full-width">
-    <label>Gallery JSON</label>
-    <textarea name="gallery" rows="3" required>{{ job.gallery }}</textarea>
-  </div>
-</div>
-
-<div class="card">
-  <div class="form-footer-action">
-    <a href="{% url 'job_list' %}" class="btn-cancel">Cancel</a>
-    <button type="submit" class="btn-post">⚡ Update Job</button>
-  </div>
-</div>
-
-</form>
-    </main>
+  </form>
+</main>
 <script src="./js/navbar.js"></script>
 
 
 </body>
 <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__inner">
+<footer class="footer">
+  <div class="footer__inner">
 
-      <div class="footer__top">
+    <div class="footer__top">
 
-        <div class="footer__brand">
-          <div class="footer__brand-name">
-            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="8" fill="#2B3EEE"/>
-              <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-            saboba
-          </div>
-          <p class="footer__brand-desc">Find your dream job or hire the best talent — all in one place.</p>
+      <div class="footer__brand">
+        <div class="footer__brand-name">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="8" fill="#2B3EEE" />
+            <path d="M20 10a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v3h8v-3Z" fill="none" stroke="#fff" stroke-width="1.8"
+              stroke-linecap="round" />
+            <path d="M24 22V13a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1Z" fill="none"
+              stroke="#fff" stroke-width="1.8" stroke-linecap="round" />
+          </svg>
+          saboba
         </div>
-
-        <div>
-          <h4 class="footer__col-title">Job Seekers</h4>
-          <ul class="footer__col-links">
-            <li><a href="search.html">Browse Jobs</a></li>
-            <li><a href="AppliedJobs.html">Applications</a></li>
-            <li><a href="profile.html">My Profile</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer__col-title">Employers</h4>
-          <ul class="footer__col-links">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="joblist.html">Jobs List</a></li>
-            <li><a href="addjob.html">Add Job</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="footer__col-title">Platform</h4>
-          <ul class="footer__col-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-
+        <p class="footer__brand-desc">Find your dream job or hire the best talent — all in one place.</p>
       </div>
 
-      <div class="footer__bottom">
-        <span>© 2026 JobFlow. All rights reserved.</span>
-        <div style="display:flex;gap:1.5rem;">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-        </div>
+      <div>
+        <h4 class="footer__col-title">Job Seekers</h4>
+        <ul class="footer__col-links">
+          <li><a href="search.html">Browse Jobs</a></li>
+          <li><a href="AppliedJobs.html">Applications</a></li>
+          <li><a href="profile.html">My Profile</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Employers</h4>
+        <ul class="footer__col-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="joblist.html">Jobs List</a></li>
+          <li><a href="addjob.html">Add Job</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer__col-title">Platform</h4>
+        <ul class="footer__col-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
       </div>
 
     </div>
-  </footer>
-</html>
+
+    <div class="footer__bottom">
+      <span>© 2026 JobFlow. All rights reserved.</span>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+{% endblock %}
