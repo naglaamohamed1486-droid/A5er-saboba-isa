@@ -112,3 +112,4 @@ def compare_view(request):
 def applied_jobs_view(request):
     # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
     return render(request, 'jobs/AppliedJobs.html')
+                                                                                                                                                                                                                                                

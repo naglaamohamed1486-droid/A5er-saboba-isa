@@ -166,14 +166,15 @@ header {
 .profile svg {
     margin-right: 4px;
 }
-
-.logout {
-    width: 80px;
+.logout{
+    width: 100px;
     height: 40px;
-    border: 1px solid #d5d7da;
-    border-radius: 10px;
+   border: 1px solid #d5d7da;
+   border-radius: 10px;
     display: flex;
-    align-items: center;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
 }
 
 .logout:hover {
