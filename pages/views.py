@@ -11,3 +11,6 @@ def contact(request):
 
 def about(request):
     return render(request, 'pages/about.html')
+
+def thank_you(request):
+    return render(request, "pages/thank-you.html")
