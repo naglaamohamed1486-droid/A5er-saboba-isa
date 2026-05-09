@@ -1,37 +1,94 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/appliedjobs.css' %}">
-{% endblock %}
-{% block content %}
-<main>
-    <div class="header">
-        <div class="top-container">
-            <div class="header-top">
-                
-                <button class="track-btn">📈 Track Progress</button>
-            </div>
-            <h1 class="page-title">My Applications</h1>
-            <p class="app-count  <span class="app-count">{{ applications|length }}</span> applications submitted</p>
-        </div>
-    </div>
 
-{% if applications %}
-    {% for app in applications %}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5>{{ app.job.title }}</h5>
-            <p>{{ app.job.company }} — {{ app.job.location }}</p>
-            <p>{{ app.job.type }} | {{ app.job.time }} | {{ app.job.salary }}</p>
-            <small>Applied on: {{ app.applied_at|date:"d/m/Y" }}</small>
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appliedjobs.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main>
+  <div class="header">
+    <div class="top-container">
+      <div class="header-top">
+        <button class="track-btn">📈 Track Progress</button>
+      </div>
+
+      <h1 class="page-title">Applied Jobs</h1>
+
+      <!-- FIXED -->
+      <p class="app-count">
+        <span class="app-count">{{ applications|length }}</span> applications submitted
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-section">
+
+      {% for app in applications %}
+      <div class="job-card">
+
+        <div class="job-info">
+          <div class="cover">
+            {% if app.job.cover %}
+              <img src="{{ app.job.cover }}" alt="{{ app.job.title }}">
+            {% else %}
+              <img src="{% static 'default-avatar.png' %}" alt="">
+            {% endif %}
+          </div>
+
+          <!-- نفس class job-text القديمة -->
+          <div class="job-text">
+            <h3>{{ app.full_name|default:app.user.username }}</h3>
+
+            <p>
+              <strong>Job:</strong> {{ app.job.title }}
+            </p>
+
+            <p>
+              {{ app.email|default:app.user.email }}
+            </p>
+
+            <p>
+              <span class="comp">{{ app.job.company }}</span> —
+              <span class="loc">{{ app.job.location }}</span>
+            </p>
+
+            <p>
+              <span class="sal">{{ app.job.salary }}</span>
+            </p>
+
+            <span>{{ app.applied_at }}</span>
+          </div>
         </div>
+
+        <!-- نفس job-actions -->
+        <div class="job-actions">
+
+          <!-- status dynamic -->
+          <span class="status {{ app.status }}">
+            {{ app.get_status_display }}
+          </span>
+
+          <!-- بدل view letter -->
+          <a href="{% url 'jobDetails' app.job.id %}" class="view-btn">
+            View Job
+          </a> 
+          <button class="cancel-btn">Cancel</button>
+
+        </div>
+
+      </div>
+      {% empty %}
+      <div class="atop">
+        <p>No applications yet.</p>
+        <a href="{% url 'search' %}" class="brow-btn">Browse Jobs</a>
+      </div>
+      {% endfor %}
+
     </div>
-    {% endfor %}
-{% else %}
-     <div class="atop">
-    <p>You have not applied for any jobs yet.</p>
-    <a href="/jobs/search/" class="brow-btn">Browse Jobs</a>
-    </div>
-{% endif %}
+  </div>
 </main>
+
 {% endblock %}

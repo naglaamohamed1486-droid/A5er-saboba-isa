@@ -16,6 +16,17 @@ class Application(models.Model):
         on_delete=models.CASCADE,
         related_name='applications'
     )
+    STATUS_CHOICES = [
+    ('pending', 'Pending'),
+    ('accepted', 'Accepted'),
+    ('rejected', 'Rejected'),
+    ]
+
+    status = models.CharField(
+    max_length=20,
+    choices=STATUS_CHOICES,
+    default='pending'
+    )
     full_name = models.CharField(max_length=120 ,blank=True)
     email = models.EmailField(null=True, blank=True)
     phone = models.CharField(max_length=30, blank=True)
