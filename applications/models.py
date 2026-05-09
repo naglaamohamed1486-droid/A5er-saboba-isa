@@ -16,6 +16,12 @@ class Application(models.Model):
         on_delete=models.CASCADE,
         related_name='applications'
     )
+    full_name = models.CharField(max_length=120 ,blank=True)
+    email = models.EmailField(null=True, blank=True)
+    phone = models.CharField(max_length=30, blank=True)
+    skills = models.TextField(blank=True)
+    experience = models.CharField(max_length=100,blank=True)
+    cv = models.FileField(upload_to="cvs/",blank=True)
     applied_at = models.DateTimeField(auto_now_add=True)
     cover_letter = models.TextField(blank=True)
 
@@ -23,7 +29,7 @@ class Application(models.Model):
         unique_together = ('user', 'job')
 
     def __str__(self):
-        return f"{self.user} - {self.job.title}"
+        return f"{self.user} applied to {self.job.title}"
 
 
 class SavedJob(models.Model):

@@ -21,6 +21,12 @@ def apply_job(request, job_id):
         Application.objects.create(
             user=request.user,
             job=job,
+            full_name=request.POST.get("full_name"),
+            email=request.POST.get("email"),
+            phone=request.POST.get("phone"),
+            skills=request.POST.get("skills"),
+            experience=request.POST.get("experience"),
+            cv=request.FILES.get("cv"),
             cover_letter=cover_letter
         )
         messages.success(request, 'Application submitted successfully.')
