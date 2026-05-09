@@ -169,18 +169,27 @@ def compare_view(request, id):
 
     request.session['compare_list'] = compare_list
 
-    # لو عندك 2 jobs
     if len(compare_list) == 2:
         jobs = Job.objects.filter(id__in=compare_list)
-
-        # reset بعد المقارنة
-        request.session['compare_list'] = []
 
         return render(request, 'jobs/compare.html', {
             'jobs': jobs
         })
+        
 
     return redirect('search')
+
+
+def remove_from_compare(request, id):
+    compare_list = request.session.get('compare_list', [])
+
+    if id in compare_list:
+        compare_list.remove(id)
+
+    request.session['compare_list'] = compare_list
+
+    return redirect('compare_page')  # أو أي صفحة عندك
+
 @user_required
 def applied_jobs_view(request):
     if Application.objects.filter(user=request.user, job=job).exists():
