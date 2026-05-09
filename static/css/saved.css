@@ -220,7 +220,22 @@ main{
 .view-btn:hover {
     background-color: hsl(234, 85%, 55%);
 }
+.apply-btn{
+  background-color:  hsl(14, 100%, 62%,0.8);
+  color: white;
+  border: 1px solid #d1d5db;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
+.apply-btn:hover{
+  background-color: hsl(14, 100%, 62%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 92, 92, 0.4);
+}
 /* Empty State */
 .empty-state {
   text-align: center;
