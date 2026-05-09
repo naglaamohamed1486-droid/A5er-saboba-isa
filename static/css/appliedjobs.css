@@ -93,7 +93,7 @@ main{
   background-color:  hsl(0, 100%, 63% ,0.3);
   color: #ff4444;
   border: 1px solid #ff4444;
-  padding: 8px 14px;
+  padding: 5px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 500;
@@ -212,15 +212,38 @@ main{
 }
 
 .status {
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
   font-weight: 600;
+  font-size: 13px;
 }
 
+.status.accepted {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status.rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
 .status.pending {
   background: #fff3cd;
   color: #e0a800;
+}
+.acc{
+  background-color: hsl(142, 88%, 41%,0.8);
+  color: #dcfce7;
+  border: 1px solid #dcfce7;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.acc:hover{
+   background-color: hsl(142, 88%, 41%);
+    transform: translateY(-2px);
 }
 
 .view-btn {
@@ -239,3 +262,14 @@ main{
     background-color: hsl(234, 85%, 55%);
 }
 
+.name{
+  color: #7847EB;
+}
+
+.tit{
+  color: #2B3EEE;
+}
+
+.d{
+ color:  #6B7280;
+}
