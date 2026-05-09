@@ -40,27 +40,12 @@
 
           <!-- نفس class job-text القديمة -->
           <div class="job-text">
-            <h3>{{ app.full_name|default:app.user.username }}</h3>
-
-            <p>
-              <strong>Job:</strong> {{ app.job.title }}
-            </p>
-
-            <p>
-              {{ app.email|default:app.user.email }}
-            </p>
-
-            <p>
-              <span class="comp">{{ app.job.company }}</span> —
-              <span class="loc">{{ app.job.location }}</span>
-            </p>
-
-            <p>
-              <span class="sal">{{ app.job.salary }}</span>
-            </p>
-
-            <span>{{ app.applied_at }}</span>
-          </div>
+  <h3>{{ app.job.title }}</h3>
+  <p class="comp">{{ app.job.company }}</p>
+  <p class="loc">{{ app.job.location }}</p>
+  <p class="sal">{{ app.job.salary }}</p>
+  <span>Applied at: {{ app.applied_at }}</span>
+</div>
         </div>
 
         <!-- نفس job-actions -->
@@ -75,7 +60,9 @@
           <a href="{% url 'jobDetails' app.job.id %}" class="view-btn">
             View Job
           </a> 
-          <button class="cancel-btn">Cancel</button>
+          <a href="{% url 'cancel_application' app.id %}" class="cancel-btn">
+  Cancel
+</a>
 
         </div>
 

@@ -163,3 +163,33 @@ h3{
     grid-template-columns:1fr;
   }
 }
+
+.messages-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 999;
+}
+
+.alert {
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+  min-width: 250px;
+}
+
+.alert.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.alert.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.alert.error {
+  background: #fee2e2;
+  color: #991b1b;
+}

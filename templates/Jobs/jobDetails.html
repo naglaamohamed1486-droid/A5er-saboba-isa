@@ -27,7 +27,17 @@
 </header>
 
 <div class="hero"></div>
-
+<div class="alert {{ message.level_tag }}">
+{% if messages %}
+  <div class="messages-container">
+    {% for message in messages %}
+      <div class="alert {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+</div>
 <main>
 <div class="card shadow">
 
@@ -127,6 +137,7 @@
            <a href="{% url 'apply_job' job.id %}" class="apply-btn">
                 <button type="button">Apply Now</button>
            </a>
+
         </div>
 
     </div>
