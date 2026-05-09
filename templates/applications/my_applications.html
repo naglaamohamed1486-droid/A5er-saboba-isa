@@ -1,6 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/appliedjobs.css' %}">
+{% endblock %}
 {% block content %}
-<h2>My Applications</h2>
+<main>
+    <div class="header">
+        <div class="top-container">
+            <div class="header-top">
+                
+                <button class="track-btn">📈 Track Progress</button>
+            </div>
+            <h1 class="page-title">My Applications</h1>
+            <p class="app-count  <span class="app-count">{{ applications|length }}</span> applications submitted</p>
+        </div>
+    </div>
+
 {% if applications %}
     {% for app in applications %}
     <div class="card mb-3">
@@ -13,7 +28,10 @@
     </div>
     {% endfor %}
 {% else %}
+     <div class="atop">
     <p>You have not applied for any jobs yet.</p>
-    <a href="{% url 'job_list' %}">Browse Jobs</a>
+    <a href="/jobs/search/" class="brow-btn">Browse Jobs</a>
+    </div>
 {% endif %}
+</main>
 {% endblock %}
