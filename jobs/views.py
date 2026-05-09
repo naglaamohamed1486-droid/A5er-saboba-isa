@@ -33,6 +33,8 @@ def search(request):
     tag = request.GET.get('tag')
 
     jobs = Job.objects.all()
+    
+    
 
     if query:
         jobs = jobs.filter(title__icontains=query)
@@ -41,6 +43,8 @@ def search(request):
         jobs = jobs.filter(tags__icontains=tag)
 
     return render(request, 'jobs/search.html', {'jobs': jobs})
+
+
 
 @admin_required
 def add_jobs(request):    
@@ -142,8 +146,26 @@ def adminDetails(request, id):
 
 # تأكدي إن السطر اللي تحت def واخد مسافة لليمين
 @user_required
-def compare_view(request):
-    return render(request, 'jobs/compare.html')
+def compare_view(request, id):
+    compare_list = request.session.get('compare_list', [])
+
+    if id not in compare_list:
+        compare_list.append(id)
+
+    request.session['compare_list'] = compare_list
+
+    # لو عندك 2 jobs
+    if len(compare_list) == 2:
+        jobs = Job.objects.filter(id__in=compare_list)
+
+        # reset بعد المقارنة
+        request.session['compare_list'] = []
+
+        return render(request, 'jobs/compare.html', {
+            'jobs': jobs
+        })
+
+    return redirect('search')
 @user_required
 def applied_jobs_view(request):
     # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
