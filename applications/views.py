@@ -50,7 +50,7 @@ def toggle_save_job(request, job_id):
     else:
         messages.success(request, 'Job saved successfully.')
 
-    return redirect('jobDetails', id=job_id)
+    return redirect('saved_jobs')
 
 
 @login_required
