@@ -183,8 +183,16 @@ def compare_view(request, id):
     return redirect('search')
 @user_required
 def applied_jobs_view(request):
+    if Application.objects.filter(user=request.user, job=job).exists():
+        messages.warning(request, "You already applied for this job!")
+        return redirect('jobDetails')  # أو jobDetails لو عايزة
     # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
     return render(request, 'jobs/AppliedJobs.html')
+
+def cancel_application(request, id):
+    app = get_object_or_404(Application, id=id, user=request.user)
+    app.delete()
+    return redirect('my_applications')
 
 @user_required
 def compare_page(request):
