@@ -47,11 +47,11 @@
     <!-- Popular tags -->
     <div class="hero__popular anim-fade-up anim-delay-4">
       <span class="hero__popular-label">Popular:</span>
-      <span class="tag tag--ghost" data-search="React">React</span>
-      <span class="tag tag--ghost" data-search="Remote">Remote</span>
-      <span class="tag tag--ghost" data-search="Senior">Senior</span>
-      <span class="tag tag--ghost" data-search="Python">Python</span>
-      <span class="tag tag--ghost" data-search="Design">Design</span>
+      <a href="{% url 'search' %}?tag=React" class="tag tag--ghost">React</a>
+<a href="{% url 'search' %}?tag=Remote" class="tag tag--ghost">Remote</a>
+<a href="{% url 'search' %}?tag=Senior" class="tag tag--ghost">Senior</a>
+<a href="{% url 'search' %}?tag=Python" class="tag tag--ghost">Python</a>
+<a href="{% url 'search' %}?tag=Design" class="tag tag--ghost">Design</a>
     </div>
 
   </div>
