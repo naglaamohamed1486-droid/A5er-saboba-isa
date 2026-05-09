@@ -1,12 +1,67 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock %}
+
 {% block content %}
-<h2>Apply for: {{ job.title }}</h2>
-<p>{{ job.company }} — {{ job.location }}</p>
-<form method="POST">
-    {% csrf_token %}
-    <textarea name="cover_letter" placeholder="Write a cover letter (optional)..." rows="5" class="form-control"></textarea>
-    <br>
-    <button type="submit" class="btn btn-primary">Submit Application</button>
-    <a href="{% url 'jobDetails' job.id %}" class="btn btn-secondary">Back</a>
-</form>
+<main>
+  <div class="hero">
+    <h1 class="tit">Apply Now</h1>
+    <p>Apply for <span>{{ job.title }}</span></p>
+  </div>
+
+  <div class="card">
+    <div class="job-details">
+      <h3 class="Job-Title">{{ job.title }}</h3>
+      <div class="data">
+        <div class="Company">{{ job.company }}</div>
+        <div class="type">{{ job.type }}</div>
+        <div class="type">{{ job.location }}</div>
+      </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="in">
+        <input type="text" name="full_name" placeholder="Enter your name" required>
+        <label>Name</label>
+      </div>
+
+      <div class="in">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <label>Email</label>
+      </div>
+
+      <div class="in">
+        <input type="text" name="phone" placeholder="Enter your phone" required>
+        <label>Phone</label>
+      </div>
+
+      <div class="in">
+        <input type="text" name="skills" placeholder="Python, Django, React..." required>
+        <label>Skills</label>
+      </div>
+
+      <div class="in">
+        <input type="text" name="experience" placeholder="Example: 2 years" required>
+        <label>Experience</label>
+      </div>
+
+      <textarea name="cover_letter" placeholder="Cover letter..." rows="5"></textarea>
+
+      <label for="cv" class="cv-upload">
+        <p><span>Click to upload</span> your CV</p>
+      </label>
+      <input type="file" id="cv" name="cv" required>
+
+      <div class="btn">
+        <button type="submit" class="submit">Submit Application</button>
+        <a href="{% url 'jobDetails' job.id %}" class="ca">Cancel</a>
+      </div>
+    </form>
+  </div>
+</main>
 {% endblock %}
