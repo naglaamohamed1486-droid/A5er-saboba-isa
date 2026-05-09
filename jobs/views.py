@@ -171,5 +171,11 @@ def applied_jobs_view(request):
     # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
     return render(request, 'jobs/AppliedJobs.html')
 
+@user_required
+def compare_page(request):
+    compare_list = request.session.get('compare_list', [])
+    jobs = Job.objects.filter(id__in=compare_list)
 
-                                                                                                                                                                                                                                                
+    return render(request, 'jobs/compare.html', {
+        'jobs': jobs
+    })                                                                                                                                                                                                                                           
