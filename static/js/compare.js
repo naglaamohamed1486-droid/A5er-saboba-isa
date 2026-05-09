@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (List.length < 2) {
         document.querySelector(".big").innerHTML = `
             <p class="empty">Please select 2 jobs to compare.</p>
-            <a href="search.html" class="search">Browse Jobs</a>`;
+            <a href="/jobs/search/" class="search">Browse Jobs</a>`;
         return;
     }
 
@@ -61,7 +61,7 @@ function remove(jobId) {
     let list = JSON.parse(localStorage.getItem("compareJobs") || "[]");
     list = list.filter(j => j.id != jobId);
     localStorage.setItem("compareJobs", JSON.stringify(list));
-    window.location.href = "search.html";
+    window.location.href = "/jobs/search/";
 }
 
 function showToast(msg) {
