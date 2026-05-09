@@ -132,6 +132,21 @@ def admin_applications(request):
         'applications': applications
     })
 
+@admin_required
+def update_application_status(request, app_id, status):
+    application = get_object_or_404(
+        Application,
+        id=app_id,
+        job__employer=request.user
+    )
+
+    if status in ['accepted', 'rejected', 'pending']:
+        application.status = status
+        application.save()
+
+    return redirect('admin_applications')
+
+
 #habiba
 @user_required
 def jobDetails(request, id):

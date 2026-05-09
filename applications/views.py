@@ -67,3 +67,4 @@ def saved_jobs(request):
     return render(request, 'applications/saved_jobs.html', {
         'saved_jobs': saved
     })
+

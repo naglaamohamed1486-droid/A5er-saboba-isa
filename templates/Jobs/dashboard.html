@@ -110,32 +110,32 @@
 
       <!-- Recent Applications -->
       <div class="recent">
-        
-       <h3>Recent Applications</h3>
+  <h3>Recent Applications</h3>
 
-        {% for application in recent_applications %}
-        <div class="app-card">
-          <div class="left">
-            <div class="avatar">{{ application.applicant.first_name|first|upper }}</div>
-            <div>
-              <h4>{{ application.applicant.get_full_name }}</h4>
-              <p>{{ application.job.title }}</p>
-            </div>
-          </div>
-          <span class="status {{ application.status|lower }}">{{ application.status }}</span>
-        </div>
-        {% empty %}
-        <div class="empty-state">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8a96ab" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-          <p>No applications yet</p>
-        </div>
-        {% endfor %}
+  {% for application in applications|slice:":5" %}
+  <div class="app-card">
+    <div class="left">
+      <div class="avatar">
+        {{ application.full_name|first|default:application.user.username|first|upper }}
       </div>
 
+      <div>
+        <h4>{{ application.full_name|default:application.user.username }}</h4>
+        <p>{{ application.job.title }}</p>
+      </div>
+    </div>
+
+    <span class="status {{ application.status }}">
+      {{ application.get_status_display }}
+    </span>
+  </div>
+
+  {% empty %}
+  <div class="empty-state">
+    <p>No applications yet</p>
+  </div>
+  {% endfor %}
+</div>
     </div>
 
     <!-- YOUR JOBS -->

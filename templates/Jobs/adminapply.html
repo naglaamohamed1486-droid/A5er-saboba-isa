@@ -40,9 +40,24 @@
           </div>
 
           <div class="job-actions">
-            <span class="status pending">Pending</span>
-            <button class="view-btn">View Letter</button>
-            <button class="cancel-btn">Reject</button>
+
+            <span class="status {{ app.status }}">
+            {{ app.get_status_display }}
+            </span>
+
+            {% if app.cover_letter %}
+            <button class="view-btn" type="button">
+            View Letter
+            </button>
+            {% endif %}
+
+            <a href="{% url 'update_application_status' app.id 'rejected' %}" class="cancel-btn">
+            Reject
+            </a>
+
+            <a href="{% url 'update_application_status' app.id 'accepted' %}" class="acc">
+            Accept
+            </a>
           </div>
 
         </div>
