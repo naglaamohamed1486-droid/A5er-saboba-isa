@@ -7,6 +7,7 @@
 
 {% block content %}
 
+
 <!-- ── HERO ───────────────────────────────────────────────────── -->
 <section class="hero">
   <div class="hero-container">
@@ -22,7 +23,7 @@
 
     <!-- STAT CARDS -->
     <div class="stats-row">
-
+      <a href="{% url 'job_list' %}">
       <div class="card stat-card">
         <div class="stat-icon orange">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F46734" stroke-width="2"
@@ -36,7 +37,8 @@
           <span class="stat-label">Total Jobs</span>
         </div>
       </div>
-
+      </a>
+      <a href="{% url 'admin_applications' %}">
       <div class="card stat-card">
         <div class="stat-icon blue">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B3EEE" stroke-width="2"
@@ -50,7 +52,7 @@
           <span class="stat-label">Applications</span>
         </div>
       </div>
-
+      </a>
     </div>
 
     <!-- QUICK ACTIONS + RECENT APPLICATIONS -->
@@ -108,7 +110,8 @@
 
       <!-- Recent Applications -->
       <div class="recent">
-        <h3>Recent Applications</h3>
+        
+       <h3>Recent Applications</h3>
 
         {% for application in recent_applications %}
         <div class="app-card">
@@ -126,7 +129,7 @@
           <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8a96ab" stroke-width="1.5"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
+            <polyline points="14 2 14 8 20 8"/>
           </svg>
           <p>No applications yet</p>
         </div>
@@ -146,7 +149,7 @@
           </svg>
         </div>
         <div>
-          <h3>Your Jobs</h3>
+          <a href="{% url 'job_list' %}"><h3>Your Jobs</h3></a>
           <p>All listings you've posted</p>
         </div>
       </div>
@@ -176,7 +179,7 @@
           </div>
 
           <!-- CTA -->
-          <a href="{% url 'jobDetails' job.id %}" class="btn-post">
+          <a href="{% url 'adminDetails' job.id %}" class="btn-post">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
@@ -195,7 +198,7 @@
             <line x1="10" y1="14" x2="14" y2="14" />
           </svg>
           <p>You haven't posted any jobs yet.</p>
-          <a href="{% url 'add_jobs' %}" class="btn-post" style="margin-top:0.25rem;">
+          <a href="{% url 'add_jobs' %}" class="btn-post">Add Jobs</a>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
               stroke-linecap="round">
               <line x1="12" y1="5" x2="12" y2="19" />
@@ -211,8 +214,6 @@
 
   </div>
 </main>
-
-<!-- ── FOOTER ─────────────────────────────────────────────────── -->
 
 
 

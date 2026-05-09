@@ -19,7 +19,10 @@
           Employer Dashboard
         </span>
         <h1>Your Jobs</h1>
+        <div class="bot">
         <p>You have posted <strong>{{ total_jobs }}</strong> job{{ total_jobs|pluralize }}</p>
+           <a href="{% url 'add_jobs' %}"  class="add"> <span>+</span> Post New Job</a>
+      </div>
       </div>
     </section>
 
@@ -35,26 +38,27 @@
         </div>
 
         <div class="job-info">
-          <h3>{{ job.title }}</h3>
+         
+            <div class="info">
+               <h3>{{ job.title }}</h3>
+               <div class="tags">
+                <span class="badge"> <svg width="16px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 20H21V10C21 8.89543 20.1046 8 19 8H15M11 16H11.01M17 16H17.01M7 16H7.01M11 12H11.01M17 12H17.01M7 12H7.01M11 8H11.01M7 8H7.01M15 20V6C15 4.89543 14.1046 4 13 4H5C3.89543 4 3 4.89543 3 6V20H15Z" stroke="#ff5c5c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg> {{ job.company }}</span>
+              </div>
+            </div>
           <div class="job-details">
-            <span class="job-comp">📍 {{ job.company }}</span>
+            <span class="job-comp">📍 {{ job.location }}</span>
             <span class="job-typ">⏰ {{ job.type }}</span>
             <span class="job-sal">💵 {{ job.salary }}</span>
           </div>
-        </div>
-
-        <div class="tags">
-          {% for tag in job.tags %}
-          <span class="badge">{{ tag }}</span>
-          {% endfor %}
-        </div>
-
-        <div class="action-btns">
+           <div class="act">
+          <div class="action-btns">
+          <a href="{% url 'adminDetails' job.id %}" class="view">View</a>
           <a class="edit-btn" href="{% url 'edit_job' job.id %}">Edit</a>
           <a class="delete-btn" href="{% url 'delete_job' job.id %}"
             onclick="return confirm('Delete this job?')">Delete</a>
+          </div>
+          </div>
         </div>
-
       </div>
       {% endfor %}
 

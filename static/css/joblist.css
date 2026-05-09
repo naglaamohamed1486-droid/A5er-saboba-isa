@@ -22,68 +22,6 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* ── NAVBAR ─────────────────────────────────── */
-.navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid #E5E7EB;
-    padding: 0 2rem;
-    height: 68px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav-content {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    gap: 8px;
-}
-
-.logo-link span {
-    margin-left: 2px;
-    background: linear-gradient(135deg, #0F1729 0%, #1a2456 50%, #2334d0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #6B7280;
-    transition: color 0.2s;
-    padding: 7px;
-    border-radius: 10px;
-    border: 0.5px solid transparent;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #0F1729;
-    border-color: #E5E7EB;
-    background-color: #F3F4FC;
-}
 
 /* ── MAIN ────────────────────────────────────── */
 main {
@@ -176,6 +114,36 @@ main {
     color: rgba(255, 255, 255, 0.85);
 }
 
+.bot{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+}
+.add{
+    background-color: #ff6b3d;
+    color: white;
+    border: 1px solid #ff6b3d;
+    margin-right: 15px;
+    transform: translateY(-50px);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 92, 92, 0.3);
+}
+.add:hover{
+   background-color: #fd531f;
+    transform: translateY(-52px);
+    box-shadow: 0 6px 20px rgba(255, 92, 92, 0.4);
+}
+.add span{
+    font-size:17px;
+    transform: translateY(-15px);
+}
+
+
 /* ── JOB LIST ────────────────────────────────── */
 .list-container {
     flex: 1 0 auto;
@@ -190,7 +158,7 @@ main {
 .job-card {
     background: white;
     border-radius: 20px;
-    padding: 24px 30px;
+    padding: 14px 15px;
     margin-bottom: 18px;
     display: flex;
     align-items: center;
@@ -204,7 +172,12 @@ main {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     border-color: #ff4444;
 }
-
+.info{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    margin-bottom: 5px;
+}
 .company-logo {
     width: 60px;
     height: 60px;
@@ -224,9 +197,13 @@ main {
     object-fit: cover;
     border-radius: 15px;
 }
-
+.act{
+    justify-self: right;
+    transform: translateY(-7px);
+}
 .job-info {
     flex-grow: 1;
+    width: 100%;
 }
 
 .job-info h3 {
@@ -282,23 +259,32 @@ main {
 .badge {
     background: #fff5f5;
     color: #ff5c5c;
-    padding: 5px 14px;
+    padding: 5px 18px;
     border-radius: 30px;
     font-size: 0.75rem;
     font-weight: 700;
+    align-content: center;
+    justify-content: center;
+}
+
+.badge svg{
+    transform: translateY(4px);
 }
 
 .action-btns {
     display: flex;
     gap: 10px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    transform: translateY(15px);
+  
 }
-
 .delete-btn {
-    background-color: #ff6b3d;
+    background-color: hsl(0, 100%, 68%,0.9);
     color: white;
-    border: 1px solid #ff6b3d;
-    padding: 8px 14px;
-    border-radius: 10px;
+    border: 1px solid hsl(14, 100%, 62%,0.5);
+    padding: 4px 15px;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: 500;
     transition: 0.3s;
@@ -306,17 +292,17 @@ main {
 }
 
 .delete-btn:hover {
-    background-color: #ff4444;
+    background-color: hsl(0, 100%, 63%);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 92, 92, 0.4);
 }
 
 .edit-btn {
-    background-color: #394ade;
+    background-color: hsl(38, 92%, 50%,0.9);
     color: white;
-    border: 1px solid #2B3EEE;
-    padding: 8px 14px;
-    border-radius: 10px;
+    border: 1px solid hsl(38, 92%, 50%,0.5);
+    padding: 4px 18px;
+    border-radius: 20px;
     cursor: pointer;
     font-weight: 500;
     transition: 0.3s;
@@ -324,7 +310,26 @@ main {
 }
 
 .edit-btn:hover {
-    background-color: #2B3EEE;
+    background-color: hsl(38, 92%, 50%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px hsl(38, 92%, 50%);
+}
+
+.view{
+    background-color: hsl(234, 71%, 55%,0.9);
+    color: white;
+    border: 1px solid hsl(234, 85%, 55%,0.5);
+    padding: 4px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    display: inline-block;
+
+}
+
+.view:hover {
+    background-color: hsl(234, 85%, 55%);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px #242f91;
 }
@@ -392,80 +397,6 @@ main {
     box-shadow: 0 6px 20px rgba(43, 62, 238, 0.3);
 }
 
-/* ── FOOTER ──────────────────────────────────── */
-.footer {
-    flex-shrink: 0;
-    background: #0F1729;
-    color: rgba(255, 255, 255, 0.7);
-    padding: 4rem 2.5rem 2rem;
-}
-
-.footer__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer__top {
-    display: grid;
-    grid-template-columns: 1.5fr repeat(3, 1fr);
-    gap: 3rem;
-    margin-bottom: 3rem;
-}
-
-.footer__brand-name {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-transform: lowercase;
-}
-
-.footer__brand-desc {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.45);
-    line-height: 1.6;
-}
-
-.footer__col-title {
-    color: #fb591f;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.2rem;
-}
-
-.footer__col-links li {
-    margin-bottom: 0.7rem;
-    list-style: none;
-}
-
-.footer__col-links a {
-    color: #E5E7EB;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-}
-
-.footer__col-links a:hover {
-    color: #fb591f;
-}
-
-.footer__bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
-}
-
-.footer__bottom a {
-    color: #E5E7EB;
-    text-decoration: none;
-    margin-left: 1.5rem;
-}
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 780px) {

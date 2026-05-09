@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/appliedjobs.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main>
+     <div class="header">
+        <div class="top-container">
+            <div class="header-top">
+                
+                <button class="track-btn">📈 Track Progress</button>
+            </div>
+            <h1 class="page-title">Applied Jobs</h1>
+            <p class="app-count  <span class="app-count">{{ applications|length }}</span> applications submitted</p>
+        </div>
+    </div>
+
+  <div class="container">
+    <div class="content-section">
+
+      {% for app in applications %}
+        <div class="job-card">
+
+          <div class="job-info">
+            <div class="cover">
+              <img src="{% static 'default-avatar.png' %}" alt="applicant avatar" 
+                   onerror="this.style.display='none'">
+            </div>
+            <div class="job-text">
+              <h3>{{ app.user.username }}</h3>
+              <p><strong>Job:</strong> {{ app.job.title }}</p>
+              <p>{{ app.user.email }}</p>
+              <span>{{ app.applied_at }}</span>
+            </div>
+          </div>
+
+          <div class="job-actions">
+            <span class="status pending">Pending</span>
+            <button class="view-btn">View Letter</button>
+            <button class="cancel-btn">Reject</button>
+          </div>
+
+        </div>
+      {% empty %}
+        <div class="atop">
+          <p>No applications yet.</p>
+          <a href="{% url 'add_jobs' %}" class="brow-btn">Add Jobs</a>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

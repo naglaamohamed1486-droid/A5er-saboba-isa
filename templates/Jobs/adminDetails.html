@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }}</title>
+
+    <link rel="stylesheet" href="{% static 'css/jobdetails.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+
+<body>
+
+<header>
+<nav class="nav">
+    <a href="{% url 'home' %}" class="logo">
+        <p class="slog">Saboba</p>
+    </a>
+
+    <ul class="links"></ul>
+
+    <div class="right">
+        <div class="logs"></div>
+    </div>
+</nav>
+</header>
+
+<div class="hero"></div>
+
+<main>
+<div class="card shadow">
+
+    <button class="back">
+        <a href="/jobs/joblist/">⬅ Back to JobList</a>
+    </button>
+
+   
+    <img src="{{ job.cover }}" width="100%" height="300px">
+
+   
+    <div class="head">
+        <h1>{{ job.title }}</h1>
+    </div>
+
+    
+    <h3>{{ job.company }}</h3>
+
+    <ul>
+        <li>{{ job.created_at }}</li>
+    </ul>
+
+    
+    <ul class="tags">
+    {% for tag in job.tags %}
+        <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
+
+   
+    <ul class="info">
+        <li>
+    <h5>Type</h5>
+    <span>{{ job.type }}</span>
+</li>
+
+<li>
+    <h5>Experience</h5>
+    <span>{{ job.exp }}</span>
+</li>
+    </ul>
+
+</div>
+
+<div class="grid">
+
+   
+    <div class="details">
+
+        <div class="bord">
+            <div class="shadow">
+                <h2>About this role</h2>
+                <p>{{ job.description }}</p>
+            </div>
+        </div>
+
+       
+        <div class="bord">
+            <div class="shadow">
+                <h2>Requirements</h2>
+                <ul>
+    {% for req in job.required %}
+        <li>{{ req }}</li>
+    {% endfor %}
+</ul>
+            </div>
+        </div>
+
+       
+        <div class="bord">
+            <div class="shadow">
+                <h2>Benefits & Perks</h2>
+               <ul>
+    {% for b in job.benefit %}
+        <li>{{ b }}</li>
+    {% endfor %}
+</ul>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="Comp">
+
+         <div class="action">
+          <a class="edit-btn" href="{% url 'edit_job' job.id %}">Edit</a>
+        </div>
+
+        <div class="shadow">
+            <h2>About company</h2>
+
+            <ul>
+                <li>{{ job.companyLocation }}</li>
+                <li>{{ job.employees }} employees</li>
+            </ul>
+        </div>
+
+       
+
+    </div>
+
+</div>
+
+</main>
+
+
+
+</body>
+</html>

@@ -36,11 +36,11 @@
             <li><a href="/jobs/dashboard/">Dashboard</a></li>
             <li><a href="/jobs/joblist/">Joblist</a></li>
             <li><a href="/jobs/add/">Add Job</a></li>
+            <li><a href="{% url 'admin_applications' %}">Applications</a></li>
 
             {% else %}
-
-            <li><a href="/jobs/saved/">Saved</a></li>
-            <li><a href="/jobs/applied/">Applied</a></li>
+            <li><a href="{% url 'saved_jobs' %}">Saved Jobs</a></li>
+            <li><a href="{% url 'my_applications' %}">Applied</a></li>
             <li><a href="/jobs/compare/">Compare</a></li>
 
             {% endif %}
@@ -83,8 +83,8 @@
         </div>
     </nav>
     <div class="menue" id="menue" style="display: none;">
-        <li><a href="/">Home</a></li>
-            <li><a href="/jobs/search/">Find Jobs</a></li>
+            <li><a href="/">Home</a></li>
+           <li><a href="/jobs/search/">Find Jobs</a></li>
 
             {% if user.is_authenticated %}
 
@@ -93,9 +93,9 @@
             <li><a href="/jobs/dashboard/">Dashboard</a></li>
             <li><a href="/jobs/joblist/">Joblist</a></li>
             <li><a href="/jobs/add/">Add Job</a></li>
+            <li><a href="{% url 'admin_applications' %}">Applications</a></li>
 
             {% else %}
-
             <li><a href="/jobs/saved/">Saved</a></li>
             <li><a href="/jobs/applied/">Applied</a></li>
             <li><a href="/jobs/compare/">Compare</a></li>

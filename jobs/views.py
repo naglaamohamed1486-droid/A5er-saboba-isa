@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from applications.models import Application
 import ast
 from functools import wraps
 from .models import Job
@@ -13,6 +14,16 @@ def admin_required(view_func):
         if not request.user.is_authenticated:
             return redirect('login')
         if request.user.role != 'admin':
+            return redirect('search')
+        return view_func(request, *args, **kwargs)
+    return wrapper
+
+def user_required(view_func):
+    @wraps(view_func)
+    def wrapper(request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('login')
+        if request.user.role != 'user':
             return redirect('search')
         return view_func(request, *args, **kwargs)
     return wrapper
@@ -49,14 +60,18 @@ def add_jobs(request):
 @admin_required
 def dashboard(request):
     jobs = Job.objects.filter(employer=request.user)
-
-    total_applications = 0  
+    applications = Application.objects.filter(
+        job__employer=request.user
+    ).select_related('job', 'user').order_by('-applied_at')
 
     return render(request, 'jobs/dashboard.html', {
         'jobs': jobs,
         'total_jobs': jobs.count(),
-        'total_applications': total_applications,
+        'applications': applications,
+        'total_applications': applications.count(),
     })
+
+
 @admin_required
 def job_list(request):
     jobs = Job.objects.filter(employer=request.user)
@@ -65,6 +80,7 @@ def job_list(request):
         'jobs': jobs,
         'total_jobs': jobs.count()
     })
+
 
 @admin_required
 def delete_job(request, id):
@@ -98,17 +114,33 @@ def edit_job(request, id):
 
     return render(request, "jobs/editjob.html", {"job": job})
 
+@admin_required
+def admin_applications(request):
+    applications = Application.objects.filter(
+        job__employer=request.user
+    ).select_related('job', 'user').order_by('-applied_at')
+
+    return render(request, 'jobs/adminapply.html', {
+        'applications': applications
+    })
 
 #habiba
-
+@user_required
 def jobDetails(request, id):
     job = get_object_or_404(Job, id=id)
     return render(request, 'jobs/jobDetails.html', {'job': job})
 
+
+@admin_required
+def adminDetails(request, id):
+    job = get_object_or_404(Job, id=id)
+    return render(request, 'jobs/adminDetails.html', {'job': job})
+
 # تأكدي إن السطر اللي تحت def واخد مسافة لليمين
+@user_required
 def compare_view(request):
     return render(request, 'jobs/compare.html')
-
+@user_required
 def applied_jobs_view(request):
     # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
     return render(request, 'jobs/AppliedJobs.html')

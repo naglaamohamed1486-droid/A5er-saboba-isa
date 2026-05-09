@@ -2,7 +2,7 @@ import json
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import User
 
 
@@ -67,7 +67,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return JsonResponse({'message': 'Logged out'})
+    return redirect('/')
 
 
 @login_required
