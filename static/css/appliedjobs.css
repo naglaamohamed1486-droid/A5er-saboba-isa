@@ -90,16 +90,17 @@ main{
 }
 
 .cancel-btn{
-  background-color:  #ff6b3d;
-  color: white;
-  border: 1px solid #d1d5db;
+  background-color:  hsl(0, 100%, 63% ,0.3);
+  color: #ff4444;
+  border: 1px solid #ff4444;
   padding: 8px 14px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: 500;
   transition: 0.3s;
 }
 .cancel-btn:hover{
+  color: #ffff;
   background-color: #ff4444;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 92, 92, 0.4);
@@ -224,88 +225,17 @@ main{
 
 .view-btn {
   border: 1px solid #d1d5db;
-  padding: 8px 14px;
-  border-radius: 10px;
-  background: #f8edca;
+  padding: 5px 20px;
+  border-radius: 20px;
+  background-color: hsl(234, 71%, 55%,0.9);
+  color: white;
+  border: 1px solid hsl(234, 85%, 55%,0.5);
   cursor: pointer;
   font-weight: 500;
   transition: 0.3s;
 }
 
 .view-btn:hover {
-  background-color: #fed19a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px  #ffecb0;
-
-  
-  
+    background-color: hsl(234, 85%, 55%);
 }
 
-.footer {
-  background: #0F1729;;
-  color: rgba(255,255,255,0.7);
-  padding: 4rem 2rem 2rem;
-}
-
-.footer__inner {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.footer__top {
-  display: grid;
-  grid-template-columns: 1.5fr repeat(3, 1fr);
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer__brand-name {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 0.75rem;
-  display: flex; align-items: center; gap: 0.4rem;
-}
-
-.footer__brand-desc {
-  font-size: 0.88rem;
-  line-height: 1.65;
-}
-
-.footer__col-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #fb591f;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-bottom: 1rem;
-}
-
-.footer__col-links { display: flex; flex-direction: column; gap: 0.6rem; }
-
-.footer__col-links a {
-  font-size: 0.88rem;
-  color:#E5E7EB;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer__col-links a:hover { color: #F46734; }
-
-.footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.83rem;
-}
-
-.footer__bottom a {
-  color: #E5E7EB;
-  transition: color 0.2s;
-  text-decoration: none;
-}
-
-.footer__bottom a:hover { color: #F46734; }
