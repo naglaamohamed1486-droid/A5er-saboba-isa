@@ -12,12 +12,12 @@ from .models import Application, SavedJob
 def apply_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
 
-    if Application.objects.filter(user=request.user, job=job).exists():
-        messages.warning(request, 'You have already applied for this job.')
-        return redirect('jobDetail', id=job_id)
-
     if request.method == 'POST':
-        cover_letter = request.POST.get('cover_letter', '')
+
+        if Application.objects.filter(user=request.user, job=job).exists():
+            messages.warning(request, 'You have already applied for this job.')
+            return redirect('jobDetails', id=job_id)
+
         Application.objects.create(
             user=request.user,
             job=job,
@@ -27,13 +27,13 @@ def apply_job(request, job_id):
             skills=request.POST.get("skills"),
             experience=request.POST.get("experience"),
             cv=request.FILES.get("cv"),
-            cover_letter=cover_letter
+            cover_letter=request.POST.get('cover_letter', '')
         )
+
         messages.success(request, 'Application submitted successfully.')
         return redirect('my_applications')
 
     return render(request, 'applications/apply.html', {'job': job})
-
 
 @login_required
 def my_applications(request):
