@@ -11,9 +11,9 @@ urlpatterns = [
    path('dashboard/', views.dashboard, name='dashboard'),
    path('delete-job/<int:id>/', views.delete_job, name='delete_job'),
    path('edit/<int:id>/', views.edit_job, name='edit_job'),
+   
    path('compare/<int:id>/', views.compare_view, name='compare'),
-   path('compare/', views.compare_page, name='compare_page'),
-   path('remove-compare/<int:id>/', views.remove_from_compare, name='remove_from_compare'),
+path('compare/', views.compare_page, name='compare_page'),
 
    path('applied-jobs/', views.applied_jobs_view, name='applied_jobs'),
    path('applications/', views.admin_applications, name='admin_applications'),
