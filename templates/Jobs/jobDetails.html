@@ -7,19 +7,7 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="hero"></div>
-
-{% if messages %}
-  <div class="messages-container">
-    {% for message in messages %}
-      <div class="alert {{ message.tags }}">
-        {{ message }}
-      </div>
-    {% endfor %}
-  </div>
-{% endif %}
-
 <main>
 <div class="card shadow">
 
