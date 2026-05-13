@@ -1,30 +1,12 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ job.title }}</title>
+{% block content %}
 
-    <link rel="stylesheet" href="{% static 'css/admindet.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-</head>
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/admindet.css' %}">
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock %}
 
-<body>
-
-<header>
-<nav class="nav">
-    <a href="{% url 'home' %}" class="logo">
-        <p class="slog">Saboba</p>
-    </a>
-
-    <ul class="links"></ul>
-
-    <div class="right">
-        <div class="logs"></div>
-    </div>
-</nav>
-</header>
 
 <div class="hero"></div>
 
@@ -136,5 +118,4 @@
 
 
 
-</body>
-</html>
+{% endblock %}
