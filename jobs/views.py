@@ -190,8 +190,6 @@ def compare_view(request, id):
     return redirect('search')  
 
 
-
-
 @user_required
 def applied_jobs_view(request):
     if Application.objects.filter(user=request.user, job=job).exists():
