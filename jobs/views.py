@@ -6,6 +6,7 @@ import ast
 from functools import wraps
 from .models import Job
 from .forms import JobForm
+from applications.models import SavedJob
 
 
 def admin_required(view_func):
@@ -28,23 +29,31 @@ def user_required(view_func):
         return view_func(request, *args, **kwargs)
     return wrapper
 
+
+
 def search(request):
     query = request.GET.get('q')
-    tag = request.GET.get('tag')
-
     jobs = Job.objects.all()
-    
-    
 
     if query:
         jobs = jobs.filter(title__icontains=query)
 
-    if tag:
-        jobs = jobs.filter(tags__icontains=tag)
+    saved_ids = []
+    if request.user.is_authenticated:
+        saved_ids = SavedJob.objects.filter(user=request.user)\
+                        .values_list('job_id', flat=True)
 
-    return render(request, 'jobs/search.html', {'jobs': jobs})
+    # 👇 أضيفي ده
+    compare_ids = list(map(int, request.session.get('compare_list', [])))
 
+    return render(request, 'jobs/search.html', {
+        'jobs': jobs,
+        'saved_ids': saved_ids,
+        'compare_ids': compare_ids  # 👈 ده المهم
+    })
+   
 
+    
 
 @admin_required
 def add_jobs(request):    
@@ -161,26 +170,28 @@ def adminDetails(request, id):
 
 # تأكدي إن السطر اللي تحت def واخد مسافة لليمين
 @user_required
+@user_required
 def compare_view(request, id):
     compare_list = request.session.get('compare_list', [])
 
-    if id not in compare_list:
-        compare_list.append(id)
+    # toggle
+    if id in compare_list:
+        compare_list.remove(id)
+    else:
+        if len(compare_list) < 2:
+            compare_list.append(id)
 
     request.session['compare_list'] = compare_list
 
-    # لو عندك 2 jobs
+    
     if len(compare_list) == 2:
-        jobs = Job.objects.filter(id__in=compare_list)
+        return redirect('compare_page')
 
-        # reset بعد المقارنة
-        request.session['compare_list'] = []
+    return redirect('search')  
 
-        return render(request, 'jobs/compare.html', {
-            'jobs': jobs
-        })
 
-    return redirect('search')
+
+
 @user_required
 def applied_jobs_view(request):
     if Application.objects.filter(user=request.user, job=job).exists():
@@ -201,4 +212,5 @@ def compare_page(request):
 
     return render(request, 'jobs/compare.html', {
         'jobs': jobs
+    
     })                                                                                                                                                                                                                                           
