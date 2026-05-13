@@ -7,6 +7,12 @@
 
 {% block content %}
 
+ {% if messages %}
+  {% for message in messages %}
+  <div class="toast">{{ message }}</div>
+  {% endfor %}
+  {% endif %}
+  
 <main>
 
 <div class="header">

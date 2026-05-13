@@ -640,7 +640,8 @@ form {
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     z-index: 9999;
-    animation: slideIn 0.5s ease;
+     animation: slideIn 0.5s ease,
+               slideOut 0.5s ease 3s forwards;
 }
 /* animation */
 @keyframes slideIn {
@@ -651,5 +652,12 @@ form {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
     }
 }

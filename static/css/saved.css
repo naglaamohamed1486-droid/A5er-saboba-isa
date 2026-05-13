@@ -298,3 +298,36 @@ main{
   fill: #EF4343;
 }
 
+
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #22c55e;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 9999;
+     animation: slideIn 0.5s ease,
+               slideOut 0.5s ease 3s forwards;
+}
+/* animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
