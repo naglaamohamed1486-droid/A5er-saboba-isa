@@ -1,33 +1,15 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ job.title }}</title>
 
-    <link rel="stylesheet" href="{% static 'css/jobdetails.css' %}">
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-</head>
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/jobdetails.css' %}">
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+{% endblock %}
 
-<body>
-
-<header>
-<nav class="nav">
-    <a href="{% url 'home' %}" class="logo">
-        <p class="slog">Saboba</p>
-    </a>
-
-    <ul class="links"></ul>
-
-    <div class="right">
-        <div class="logs"></div>
-    </div>
-</nav>
-</header>
+{% block content %}
 
 <div class="hero"></div>
-<div class="alert {{ message.level_tag }}">
+
 {% if messages %}
   <div class="messages-container">
     {% for message in messages %}
@@ -37,7 +19,7 @@
     {% endfor %}
   </div>
 {% endif %}
-</div>
+
 <main>
 <div class="card shadow">
 
@@ -45,47 +27,39 @@
         <a href="{% url 'search' %}">⬅ Back to Jobs</a>
     </button>
 
-    <!-- صورة -->
     <img src="{{ job.cover }}" width="100%" height="300px">
 
-    <!-- العنوان -->
     <div class="head">
         <h1>{{ job.title }}</h1>
     </div>
 
-    <!-- الشركة -->
     <h3>{{ job.company }}</h3>
 
-    <!-- الوقت -->
     <ul>
         <li>{{ job.created_at }}</li>
     </ul>
 
-    <!-- Tags -->
     <ul class="tags">
     {% for tag in job.tags %}
         <li>{{ tag }}</li>
     {% endfor %}
-</ul>
+    </ul>
 
-    <!-- معلومات -->
     <ul class="info">
         <li>
-    <h5>Type</h5>
-    <span>{{ job.type }}</span>
-</li>
-
-<li>
-    <h5>Experience</h5>
-    <span>{{ job.exp }}</span>
-</li>
+            <h5>Type</h5>
+            <span>{{ job.type }}</span>
+        </li>
+        <li>
+            <h5>Experience</h5>
+            <span>{{ job.exp }}</span>
+        </li>
     </ul>
 
 </div>
 
 <div class="grid">
 
-    <!-- التفاصيل -->
     <div class="details">
 
         <div class="bord">
@@ -95,38 +69,34 @@
             </div>
         </div>
 
-        <!-- Requirements -->
         <div class="bord">
             <div class="shadow">
                 <h2>Requirements</h2>
                 <ul>
-    {% for req in job.required %}
-        <li>{{ req }}</li>
-    {% endfor %}
-</ul>
+                {% for req in job.required %}
+                    <li>{{ req }}</li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
 
-        <!-- Benefits -->
         <div class="bord">
             <div class="shadow">
                 <h2>Benefits & Perks</h2>
-               <ul>
-    {% for b in job.benefit %}
-        <li>{{ b }}</li>
-    {% endfor %}
-</ul>
+                <ul>
+                {% for b in job.benefit %}
+                    <li>{{ b }}</li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
 
     </div>
 
-    <!-- الشركة -->
     <div class="Comp">
 
         <div class="shadow">
             <h2>About company</h2>
-
             <ul>
                 <li>{{ job.companyLocation }}</li>
                 <li>{{ job.employees }} employees</li>
@@ -134,10 +104,9 @@
         </div>
 
         <div class="apply">
-           <a href="{% url 'apply_job' job.id %}" class="apply-btn">
+            <a href="{% url 'apply_job' job.id %}">
                 <button type="button">Apply Now</button>
-           </a>
-
+            </a>
         </div>
 
     </div>
@@ -146,7 +115,4 @@
 
 </main>
 
-
-
-</body>
-</html>
+{% endblock %}
