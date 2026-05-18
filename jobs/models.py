@@ -16,8 +16,6 @@ class Job(models.Model):
     description = models.TextField()
     required = models.JSONField()
     benefit = models.JSONField()
-    gallery = models.JSONField()
-
     companyLocation = models.CharField(max_length=200)
     employees = models.CharField(max_length=100)
     employer = models.ForeignKey(

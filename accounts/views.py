@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render,redirect
 from .models import User
+from jobs.models import Job
+from applications.models import Application, SavedJob
 
 
 def signup_view(request):
@@ -99,6 +101,11 @@ def me_view(request):
     if not request.user.is_authenticated:
         return JsonResponse({'logged_in': False})
     u = request.user
+    applied_count = Application.objects.filter(user=u).count()
+    saved_count = SavedJob.objects.filter(user=u).count()
+    jobs_count = Job.objects.filter(employer=u).count()
+    applications_count = Application.objects.filter(job__employer=u).count()
+    
     return JsonResponse({
         'logged_in'          : True,
         'username'           : u.username,
@@ -108,8 +115,8 @@ def me_view(request):
         'gender'             : u.gender,
         'company'            : u.company,
         'location'           : u.location,
-        'applied_count'      : u.applications.count() if hasattr(u, 'applications') else 0,
-        'saved_count'        : u.saved_jobs.count() if hasattr(u, 'saved_jobs') else 0,
-        'jobs_count'         : u.posted_jobs.count() if hasattr(u, 'posted_jobs') else 0,
-        'applications_count' : u.posted_jobs.aggregate(total=__import__('django.db.models', fromlist=['Sum']).Sum('applications__id'))['total'] or 0 if hasattr(u, 'posted_jobs') else 0,
-    })
+        'applied_count': applied_count,
+        'saved_count': saved_count,
+        'jobs_count': jobs_count,
+        'applications_count': applications_count,
+          })
