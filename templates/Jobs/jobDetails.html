@@ -11,11 +11,16 @@
 <main>
 
 {% if messages %}
-  {% for message in messages %}
-    {% if "jobdetails" in message.tags %}
-      <div class="toast">{{ message }}</div>
-    {% endif %}
-  {% endfor %}
+  <div class="messages-container">
+    {% for message in messages %}
+      {% if "jobdetails" in message.tags %}
+        <div class="toast {{ message.tags }}">
+          <i class="ti ti-info-circle"></i>
+          {{ message }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 {% endif %}
 
 <div class="card shadow">

@@ -6,16 +6,20 @@
 {% endblock %}
 
 {% block content %}  
-<main>
-
-  {% if messages %}
-  {% for message in messages %}
-    {% if "saved" in message.tags %}
-      <div class="toast">{{ message }}</div>
-    {% endif %}
-  {% endfor %}
+ {% if messages %}
+  <div class="messages-container">
+    {% for message in messages %}
+      {% if "saved" in message.tags %}
+        <div class="toast {{ message.tags }}">
+          <i class="ti ti-circle-check"></i>
+          {{ message }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
 {% endif %}
 
+<main>
 <div class="header">
   <div style="width: 100%; padding: 40px 0;">
     <h1>saved Jobs</h1>
