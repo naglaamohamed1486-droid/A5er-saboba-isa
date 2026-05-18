@@ -26,14 +26,15 @@ function toggleEditForm() {
 
 async function saveProfile() {
     const username = document.getElementById('inputName')?.value;
-    const age      = document.getElementById('inputAge')?.value;
-    const gender   = document.getElementById('inputGender')?.value;
+    const age = document.getElementById('inputAge')?.value;
+    const gender = document.getElementById('inputGender')?.value;
     const location = document.getElementById('inputLocation')?.value;
+    const skills = document.getElementById('inputSkills')?.value || '';
 
-    const res  = await fetch("/accounts/profile/", {
-        method : "POST",
+    const res = await fetch("/accounts/profile/", {
+        method: "POST",
         headers: { "Content-Type": "application/json", "X-CSRFToken": getCSRF() },
-        body   : JSON.stringify({ username, age, gender, location })
+        body: JSON.stringify({ username, age, gender, location, skills })
     });
     const data = await res.json();
 
@@ -43,7 +44,7 @@ async function saveProfile() {
     }
 
     showToast('✅ Profile saved!');
-    setTimeout(() => location.reload(), 1000);
+    setTimeout(() => window.location.reload(), 1000);
 }
 
 function buildProfileHeader(user) {
@@ -87,7 +88,12 @@ function buildEditForm(user) {
                 <div class="form-group">
                     <label>Location</label>
                     <input id="inputLocation" type="text" value="${user.location || ''}" placeholder="Your location" />
-                </div>
+                    </div>
+                    <div class="form-group">
+                    <label>Skills (comma separated)</label>
+                 <input id="inputSkills" type="text" value="${user.skills || ''}" placeholder="Python, Django, React..." />
+                 </div>
+                
                 <button class="btn btn--accent" onclick="saveProfile()">💾 Save Changes</button>
             </div>
         </div>
@@ -108,7 +114,25 @@ function buildUserProfile(user) {
                 <div class="profile-stat-card__number">${user.saved_count || 0}</div>
                 <div class="profile-stat-card__label">Saved</div>
             </div>
+            <div class="profile-stat-card profile-stat-card--mint">
+                <div class="profile-stat-card__icon">🧠</div>
+                <div class="profile-stat-card__number">${user.skills ? user.skills.split(',').filter(s => s.trim()).length : 0}</div>
+                <div class="profile-stat-card__label">Skills</div>
+            </div>
         </div>
+
+        <div class="profile-section">
+            <div class="profile-section__header">
+                <span>🧠</span>
+                <h3 class="profile-section__title">Skills</h3>
+            </div>
+            ${user.skills
+                ? `<div style="display:flex;flex-wrap:wrap;gap:0.4rem;">
+                    ${user.skills.split(',').map(s => `<span class="tag tag--secondary">${s.trim()}</span>`).join('')}
+                   </div>`
+                : `<p class="profile-section__empty">No skills added yet</p>`}
+        </div>
+
         ${buildEditForm(user)}
     `;
 }
@@ -141,7 +165,7 @@ function buildAdminProfile(user) {
 }
 
 async function init() {
-    const res  = await fetch("/accounts/me/");
+    const res = await fetch("/accounts/me/");
     const user = await res.json();
 
     if (!user.logged_in) {

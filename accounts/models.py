@@ -9,3 +9,4 @@ class User(AbstractUser):
     gender   = models.CharField(max_length=10, blank=True)
     company  = models.CharField(max_length=200, blank=True)
     location = models.CharField(max_length=200, blank=True)
+    skills   = models.TextField(blank=True)
