@@ -8,6 +8,13 @@
 {% block content %}
 
 <main>
+  {% if messages %}
+  {% for message in messages %}
+    {% if "apply" in message.tags %}
+      <div class="toast">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
   <div class="header">
     <div class="top-container">
       <div class="header-top">

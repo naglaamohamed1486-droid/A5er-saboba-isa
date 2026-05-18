@@ -9,6 +9,15 @@
 {% block content %}
 <div class="hero"></div>
 <main>
+
+{% if messages %}
+  {% for message in messages %}
+    {% if "jobdetails" in message.tags %}
+      <div class="toast">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 <div class="card shadow">
 
     <button class="back">

@@ -7,7 +7,6 @@ from django.contrib import messages
 from jobs.models import Job
 from .models import Application, SavedJob
 
-
 @login_required
 def apply_job(request, job_id):
     job = get_object_or_404(Job, id=job_id)
@@ -15,9 +14,8 @@ def apply_job(request, job_id):
     if request.method == 'POST':
 
         if Application.objects.filter(user=request.user, job=job).exists():
-            messages.warning(request, 'You have already applied for this job.')
-            return render(request, 'applications/apply.html', {'job': job})
-
+            messages.warning(request, "You already applied for this job ⚠️", extra_tags="jobdetails")
+            return redirect('jobDetails', id=job_id)
         Application.objects.create(
             user=request.user,
             job=job,
@@ -30,7 +28,7 @@ def apply_job(request, job_id):
             cover_letter=request.POST.get('cover_letter', '')
         )
 
-        messages.success(request, 'Application submitted successfully.')
+        messages.success(request, "Application submitted successfully ✅", extra_tags="apply")
         return redirect('my_applications')
 
     return render(request, 'applications/apply.html', {'job': job})
@@ -52,9 +50,9 @@ def toggle_save_job(request, job_id):
 
     if not created:
         saved.delete()
-        messages.info(request, 'Job removed from saved list.')
+        messages.info(request, "Removed from saved ❌", extra_tags="saved")
     else:
-        messages.success(request, 'Job saved successfully.')
+        messages.success(request, "Saved successfully ❤️", extra_tags="saved")
 
     return redirect('saved_jobs')
 

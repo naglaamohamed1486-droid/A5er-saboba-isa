@@ -5,15 +5,16 @@
 <link rel="stylesheet" href="{% static 'css/saved.css' %}">
 {% endblock %}
 
-{% block content %}
-
- {% if messages %}
-  {% for message in messages %}
-  <div class="toast">{{ message }}</div>
-  {% endfor %}
-  {% endif %}
-  
+{% block content %}  
 <main>
+
+  {% if messages %}
+  {% for message in messages %}
+    {% if "saved" in message.tags %}
+      <div class="toast">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 <div class="header">
   <div style="width: 100%; padding: 40px 0;">

@@ -6,6 +6,15 @@
 {% endblock %}
 
 {% block content %}
+
+{% if messages %}
+  {% for message in messages %}
+    {% if "search" in message.tags %}
+      <div class="toast">{{ message }}</div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 <!-- HERO -->
 <section class="hero">
     <h1>Find Your Job</h1>

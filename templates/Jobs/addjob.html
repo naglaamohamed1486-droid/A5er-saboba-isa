@@ -24,9 +24,26 @@
 
 <!-- ===================== FORM ===================== -->
 <main class="form-container">
-  {% if form.errors %}
-  <div style="color:red;">
-    {{ form.errors }}
+ {% if form.errors %}
+<div class="form-errors">
+  <div class="form-errors__header">
+    <i class="ti ti-circle-x"></i>
+    <span>Please fix the errors below before continuing.</span>
+  </div>
+  <ul class="form-errors__list">
+    {% for field, errors in form.errors.items %}
+      {% for error in errors %}
+        <li>
+          {% if field != '__all__' %}
+            <span class="form-errors__field">{{ field|capfirst }}</span>
+          {% endif %}
+          {{ error }}
+        </li>
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
   </div>
   {% endif %}
   <form method="POST">
