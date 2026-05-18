@@ -106,7 +106,7 @@ function buildUserProfile(user) {
         <div class="profile-stats profile-stats--user">
             <div class="profile-stat-card profile-stat-card--warm">
                 <div class="profile-stat-card__icon">📄</div>
-                <div class="profile-stat-card__number">${user.applications_count || 0}</div>
+                <div class="profile-stat-card__number">${user.applied_count || 0}</div>
                 <div class="profile-stat-card__label">Applied</div>
             </div>
             <div class="profile-stat-card profile-stat-card--cool">

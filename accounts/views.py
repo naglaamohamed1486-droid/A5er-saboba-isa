@@ -116,7 +116,7 @@ def me_view(request):
         'gender'             : u.gender,
         'company'            : u.company,
         'location'           : u.location,
-          'skills'             : u.skills,
+        'skills'             : u.skills,
         'applied_count': applied_count,
         'saved_count': saved_count,
         'jobs_count': jobs_count,
