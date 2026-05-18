@@ -64,7 +64,7 @@ def add_jobs(request):
             job.employer = request.user
             job.save()
 
-            messages.success(request, "Job added successfully ✅")
+            messages.success(request, "Job added successfully ✅", extra_tags='joblist')
             return redirect('job_list')
         else:
             print(form.errors)
@@ -102,6 +102,7 @@ def job_list(request):
 def delete_job(request, id):
     job = get_object_or_404(Job, id=id, employer=request.user)
     job.delete()
+    messages.success(request, "Job deleted successfully 🗑️", extra_tags="joblist")
     return redirect('job_list')
 @admin_required
 def edit_job(request, id):
@@ -125,6 +126,8 @@ def edit_job(request, id):
        
 
         job.save()
+        messages.success(request, "Job updated successfully ✏️", extra_tags="joblist")
+       
         return redirect("job_list")
 
     return render(request, "jobs/editjob.html", {"job": job})

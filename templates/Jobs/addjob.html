@@ -24,12 +24,6 @@
 
 <!-- ===================== FORM ===================== -->
 <main class="form-container">
-  {% if messages %}
-  {% for message in messages %}
-  <div class="toast">{{ message }}</div>
-  {% endfor %}
-  {% endif %}
-
   {% if form.errors %}
   <div style="color:red;">
     {{ form.errors }}

@@ -11,6 +11,17 @@
 <div class="hero"></div>
 
 <main>
+    {% if messages %}
+  <div class="messages-container">
+    {% for message in messages %}
+      {% if "adminDetails" in message.tags %}
+        <div class="toast {{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
 <div class="card shadow">
 
     <button class="back">

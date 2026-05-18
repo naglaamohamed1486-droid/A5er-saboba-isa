@@ -7,6 +7,17 @@
 
 {% block content %}
 <main>
+  {% if messages %}
+  <div class="messages-container">
+    {% for message in messages %}
+      {% if "joblist" in message.tags %}
+        <div class="toast {{ message.tags }}">
+          {{ message }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
   <div class="joblist-page">
 
     <!-- HERO -->
