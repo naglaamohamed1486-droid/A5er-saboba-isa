@@ -13,13 +13,12 @@ urlpatterns = [
    path('edit/<int:id>/', views.edit_job, name='edit_job'),
    
    path('compare/<int:id>/', views.compare_view, name='compare'),
-path('compare/', views.compare_page, name='compare_page'),
+   path('compare/', views.compare_page, name='compare_page'),
 
-   path('applied-jobs/', views.applied_jobs_view, name='applied_jobs'),
+ 
    path('applications/', views.admin_applications, name='admin_applications'),
    path('applications/<int:app_id>/<str:status>/', views.update_application_status, name='update_application_status'),
    path('cancel-application/<int:id>/', views.cancel_application, name='cancel_application'),
    #habiba
-   #yarab n3eesh
-   #yarab n3eesh tany
+ 
 ]

@@ -43,13 +43,13 @@ def search(request):
         saved_ids = SavedJob.objects.filter(user=request.user)\
                         .values_list('job_id', flat=True)
 
-    # 👇 أضيفي ده
+  
     compare_ids = list(map(int, request.session.get('compare_list', [])))
 
     return render(request, 'jobs/search.html', {
         'jobs': jobs,
         'saved_ids': saved_ids,
-        'compare_ids': compare_ids  # 👈 ده المهم
+        'compare_ids': compare_ids  
     })
    
 
@@ -168,13 +168,13 @@ def adminDetails(request, id):
     job = get_object_or_404(Job, id=id)
     return render(request, 'jobs/adminDetails.html', {'job': job})
 
-# تأكدي إن السطر اللي تحت def واخد مسافة لليمين
-@user_required
+
+
 @user_required
 def compare_view(request, id):
     compare_list = request.session.get('compare_list', [])
 
-    # toggle
+   
     if id in compare_list:
         compare_list.remove(id)
     else:
@@ -190,14 +190,8 @@ def compare_view(request, id):
     return redirect('search')  
 
 
-@user_required
-def applied_jobs_view(request):
-    if Application.objects.filter(user=request.user, job=job).exists():
-        messages.warning(request, "You already applied for this job!")
-        return redirect('jobDetails')  # أو jobDetails لو عايزة
-    # هنا هتجيبي الوظائف اللي المستخدم قدم عليها
-    return render(request, 'jobs/AppliedJobs.html')
 
+@user_required
 def cancel_application(request, id):
     app = get_object_or_404(Application, id=id, user=request.user)
     app.delete()
@@ -211,4 +205,5 @@ def compare_page(request):
     return render(request, 'jobs/compare.html', {
         'jobs': jobs
     
-    })                                                                                                                                                                                                                                           
+    })   
+
