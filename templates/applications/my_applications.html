@@ -7,8 +7,7 @@
 
 {% block content %}
 
-<main>
- {% if messages %}
+{% if messages %}
   <div class="messages-container">
     {% for message in messages %}
       {% if "apply" in message.tags %}
@@ -20,6 +19,9 @@
     {% endfor %}
   </div>
 {% endif %}
+
+<main>
+ 
   <div class="header">
     <div class="top-container">
       <div class="header-top">
