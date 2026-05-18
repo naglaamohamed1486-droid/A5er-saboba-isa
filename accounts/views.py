@@ -91,6 +91,7 @@ def profile_view(request):
     user.age      = age
     user.gender   = gender
     user.location = location
+    user.skills   = data.get('skills', '')
     user.save()
     return JsonResponse({'message': 'Profile updated'})
 
@@ -108,6 +109,7 @@ def me_view(request):
         'gender'             : u.gender,
         'company'            : u.company,
         'location'           : u.location,
+        'skills'             : u.skills,
         'applied_count'      : u.applications.count() if hasattr(u, 'applications') else 0,
         'saved_count'        : u.saved_jobs.count() if hasattr(u, 'saved_jobs') else 0,
         'jobs_count'         : u.posted_jobs.count() if hasattr(u, 'posted_jobs') else 0,
