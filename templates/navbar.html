@@ -27,7 +27,9 @@
         <ul class="links">
 
             <li><a href="/">Home</a></li>
-            <li><a href="/jobs/search/">Find Jobs</a></li>
+            {% if not user.is_authenticated or user.role != "admin" %}
+              <li><a href="/jobs/search/">Find Jobs</a></li>
+            {% endif %}
 
             {% if user.is_authenticated %}
 

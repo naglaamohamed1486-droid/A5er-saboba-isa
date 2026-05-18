@@ -15,7 +15,7 @@ def admin_required(view_func):
         if not request.user.is_authenticated:
             return redirect('login')
         if request.user.role != 'admin':
-            return redirect('search')
+            return redirect('dashboard')
         return view_func(request, *args, **kwargs)
     return wrapper
 
@@ -30,7 +30,7 @@ def user_required(view_func):
     return wrapper
 
 
-
+@user_required
 def search(request):
     query = request.GET.get('q')
     jobs = Job.objects.all()
