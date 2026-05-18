@@ -98,7 +98,6 @@ def job_list(request):
         'total_jobs': jobs.count()
     })
 
-
 @admin_required
 def delete_job(request, id):
     job = get_object_or_404(Job, id=id, employer=request.user)
@@ -120,11 +119,10 @@ def edit_job(request, id):
         job.description = request.POST.get("description")
         job.companyLocation = request.POST.get("companyLocation")
         job.employees = request.POST.get("employees")
-
         job.tags = ast.literal_eval(request.POST.get("tags"))
         job.required = ast.literal_eval(request.POST.get("required"))
         job.benefit = ast.literal_eval(request.POST.get("benefit"))
-        job.gallery = ast.literal_eval(request.POST.get("gallery"))
+       
 
         job.save()
         return redirect("job_list")

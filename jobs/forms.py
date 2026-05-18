@@ -68,7 +68,6 @@ class JobForm(forms.ModelForm):
             'description',
             'required',
             'benefit',
-            'gallery',
             'companyLocation',
             'employees',
         ]
@@ -96,13 +95,12 @@ class JobForm(forms.ModelForm):
                 'placeholder': 'https://example.com/logo.png',
             }),
 
-            # ── Textareas ────────────────────────────────────────
+         
             'description': forms.Textarea(attrs={
                 'rows': 6,
                 'placeholder': 'Describe the role, responsibilities, and day-to-day tasks...',
             }),
 
-            # ── JSON fields — plain textarea ─────────────────────
             'tags': forms.Textarea(attrs={
                 'rows': 2,
                 'placeholder': '["React", "TypeScript", "Remote"]',
@@ -115,10 +113,7 @@ class JobForm(forms.ModelForm):
                 'rows': 4,
                 'placeholder': '["Health insurance", "Remote work", "Stock options"]',
             }),
-            'gallery': forms.Textarea(attrs={
-                'rows': 2,
-                'placeholder': '["https://…/office.jpg", "https://…/team.jpg"]',
-            }),
+            
         }
 
         labels = {
@@ -134,7 +129,6 @@ class JobForm(forms.ModelForm):
             'description':     'Job Description',
             'required':        'Requirements',
             'benefit':         'Benefits',
-            'gallery':         'Gallery Image URLs',
             'companyLocation': 'Company HQ Location',
             'employees':       'Number of Employees',
         }
