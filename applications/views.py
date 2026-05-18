@@ -16,7 +16,7 @@ def apply_job(request, job_id):
 
         if Application.objects.filter(user=request.user, job=job).exists():
             messages.warning(request, 'You have already applied for this job.')
-            return redirect('jobDetails', id=job_id)
+            return render(request, 'applications/apply.html', {'job': job})
 
         Application.objects.create(
             user=request.user,
